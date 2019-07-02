@@ -6,7 +6,7 @@ Welcome to the Lisk Documentation repository!
 
 Get started with the tutorials and getting started guides:
 
-- [Documentation Start](modules/ROOT/pages/start.md)
+- [Documentation Start](modules/ROOT/pages/start.adoc)
 - [Getting started: Build a blockchain application](modules/ROOT/pages/build-blockchain-app.md)
 - [Getting started: Interact with the network](modules/ROOT/pages/interact-with-network.md)
 - [Getting started: Maintain a node](modules/ROOT/pages/maintain-node.md)

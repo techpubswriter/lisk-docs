@@ -1,3 +1,4 @@
-name: lisk-documentation
+name: lisk-docs
 title: Lisk Docs
 version: '1.0'
+start_page: ROOT:start.adoc
