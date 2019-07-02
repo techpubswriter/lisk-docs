@@ -1,0 +1,223 @@
+[[lisk-hub-for-developers]]
+Lisk Hub for developers
+-----------------------
+
+This page provides documentation for developers about how to run Lisk
+Hub from Source.
+
+* link:#setup[Setup]
+* link:#system-requirements[System requirements]
+* link:#installation[Installation]
+* link:#user-guide[User Guide]
+* link:#build[Build]
+* link:#electron[Electron]
+* link:#react-storybook[React Storybook]
+* link:#testing[Testing]
+
+[[setup]]
+Setup
+~~~~~
+
+[[system-requirements]]
+System requirements
+^^^^^^^^^^^^^^^^^^^
+
+* Ubuntu 16.04 (LTS) x86_64 or later
+* MacOS 10.12 (Sierra) or later
+
+[[installation]]
+Installation
+^^^^^^^^^^^^
+
+[source,bash]
+----
+git clone https://github.com/LiskHQ/lisk-hub.git # clone the Lisk Hub repository
+cd lisk-hub
+npm install # install dependencies
+npm run dev # start development version of Lisk Hub
+----
+
+Open `http://localhost:8080` in a browser, to verify that the
+installation was successful. To enable the network switcher, use
+`http://localhost:8080/#/?showNetwork=true`.
+
+If you are actively developing in a specific route, and want to be
+autologged in everytime you reload the page, please add the following to
+localStorage:
+
+[source,js]
+----
+localStorage.setItem('liskCoreUrl', 'http://localhost:4000') // desired node to log in into
+localStorage.setItem('loginKey', 'wagon stock borrow episode laundry kitten salute link globe zero feed marble') // desired account passphrase
+----
+
+[[user-guide]]
+User Guide
+~~~~~~~~~~
+
+[[build]]
+Build
+^^^^^
+
+[source,bash]
+----
+npm run build
+----
+
+[[electron]]
+Electron
+^^^^^^^^
+
+[[start]]
+Start
++++++
+
+Start the Electron client. Before starting you need to make sure the
+application is built. If you need to build the entire application, run
+
+[source,bash]
+----
+npm run build
+----
+
+as mentioned before. And if you want to solely build the Electron app,
+run
+
+[source,bash]
+----
+npm run build-electron
+----
+
+Then, to launch Electron, you can run
+
+[source,bash]
+----
+npm run start
+----
+
+Then, to launch the version with hardware wallet, you can run
+
+[source,bash]
+----
+npm run dev-hardware-wallet
+----
+
+To launch Electron that gets live updates from already running
+webpack-dev-server on port 8080, you can run
+
+[source,bash]
+----
+LISK_HUB_URL="http://localhost:8080" npm run start
+----
+
+[[windows]]
+Windows
++++++++
+
+Build package for Windows (on Windows in
+https://git-for-windows.github.io/[Git BASH]).
+
+[source,bash]
+----
+npm run pack:win
+----
+
+[[macos]]
+macOS
++++++
+
+Build package for macOS (on macOs)
+
+[source,bash]
+----
+npm run pack 
+----
+
+[[linux]]
+Linux
++++++
+
+Build package for Linux (on Linux).
+
+[source,bash]
+----
+npm run pack 
+----
+
+[[react-storybook]]
+React Storybook
+^^^^^^^^^^^^^^^
+
+To launch storybook sandbox with components run
+
+[source,bash]
+----
+npm run storybook
+----
+
+and navigate to `localhost:6006`
+
+[[testing]]
+Testing
+^^^^^^^
+
+[[run-unit-tests]]
+Run unit tests
+++++++++++++++
+
+[[single-run]]
+Single run
+
+[source,bash]
+----
+npm run test
+----
+
+[[run-each-time-a-file-changes]]
+Run each time a file changes
+
+[source,bash]
+----
+npm run test-live
+----
+
+[[run-end-to-end-tests]]
+Run end-to-end tests
+++++++++++++++++++++
+
+To run e2e tests you need to install https://github.com/LiskHQ/lisk[Lisk
+Core].
+
+[[setup-lisk-core]]
+Setup Lisk Core
+
+Setup a Lisk node from Source, as described in
+https://github.com/LiskHQ/lisk
+
+And connect to `devnet` with it (`localhost:4000`)
+
+[[run]]
+Run
+
+Start the development version of lisk-hub:
+
+[source,bash]
+----
+npm run dev
+----
+
+Apply blockchain snapshot
+
+[source,bash]
+----
+./test/e2e-test-setup.sh ~/git/lisk/
+----
+
+(replace `~/git/lisk/` with your path to Lisk Core)
+
+Run e2e tests
+
+[source,bash]
+----
+npm run cypress:run
+----

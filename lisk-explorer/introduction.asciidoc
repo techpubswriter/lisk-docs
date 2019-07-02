@@ -1,0 +1,61 @@
+[[lisk-explorer-documentation]]
+Lisk Explorer Documentation
+---------------------------
+
+[[table-of-contents]]
+Table of contents
+~~~~~~~~~~~~~~~~~
+
+[cols=",",options="header",]
+|=======================================================================
+|link:setup/setup.md[Setup] |link:user-guide/user-guide.md[User Guide]
+|link:setup/pre-install/pre-install.md[Pre-Installation]
+|link:user-guide/tools/tools.md[Tools]
+
+|link:setup/install/install.md[Installation]
+|link:user-guide/api/api.md[API]
+|=======================================================================
+
+Lisk Explorer is a tool that visualizes the vast information from Lisk's
+blockchain .
+
+It can be used for gathering information about particular blocks and
+transactions, but also for some general information about the whole
+network and its delegates status. Components like Network Monitor and
+Delegate Monitor show the status of the whole ecosystem in real time.
+
+[[networks]]
+Networks
+~~~~~~~~
+
+Similarly to Lisk Core, Lisk Explorer can be connected to different
+networks. The network is defined by the node it is connected to (under
+`config.lisk.host` attribute in the config file). There are two key
+public networks, entirely independent of each other, that are always
+accessible: *Mainnet* and *Testnet*.
+
+[[mainnet]]
+Mainnet
+^^^^^^^
+
+Mainnet is where the true Lisk economy exists. On this network, Lisk
+users are able to transfer LSK tokens from one account to another,
+register accounts as delegates, vote for another delegates or register
+dApps. It can be explored via the https://explorer.lisk.io[Lisk
+Explorer].
+
+[[testnet]]
+Testnet
+^^^^^^^
+
+Testnet is an independent replica of the Lisk Mainnet intended as an
+area to rehearse upgrades before they take place on the Lisk Mainet.
+This is where new versions and fixes of Lisk Core are tested. It can be
+explored via https://testnet-explorer.lisk.io[Lisk Tesnet Explorer].
+
+[[codebase]]
+Codebase
+~~~~~~~~
+
+You can find the codebase at our
+https://github.com/LiskHQ/lisk-explorer[Lisk Explorer Github] page.

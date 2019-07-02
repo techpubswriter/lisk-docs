@@ -1,0 +1,69 @@
+image:assets/lisk_docu_blog_banner.png[Lisk Documentation]
+
+[[lisk-documentation]]
+Lisk Documentation
+------------------
+
+Welcome to the Lisk Documentation repository!
+
+See the documentation for each product:
+
+* https://github.com/LiskHQ/lisk-docs/blob/master/lisk-protocol/introduction.md[Lisk
+Protocol]
+* https://github.com/LiskHQ/lisk-docs/blob/master/lisk-core/introduction.md[Lisk
+Core]
+* https://github.com/LiskHQ/lisk-docs/blob/master/lisk-elements/introduction.md[Lisk
+Elements]
+* https://github.com/LiskHQ/lisk-docs/blob/master/lisk-commander/introduction.md[Lisk
+Commander]
+* https://github.com/LiskHQ/lisk-docs/blob/master/lisk-explorer/introduction.md[Lisk
+Explorer]
+* https://github.com/LiskHQ/lisk-docs/blob/master/lisk-hub/introduction.md[Lisk
+Hub]
+* https://github.com/LiskHQ/lisk-docs/blob/master/lisk-mobile/intro.md[Lisk
+Mobile]
+
+[[view-previous-versions-of-the-documentation]]
+View previous versions of the documentation
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The versions of the documentation are listed under
+https://github.com/LiskHQ/lisk-docs/releases[Releases] and are tagged by
+release date in the following format:
+
+....
+lisk-docs-yyyy-mm-dd
+....
+
+Additionally, each product's documentation has its own release tags,
+referring to the product's versioning scheme. This makes it convenient
+to find the corresponding documentation version for a specific version
+of the product.
+
+Examples:
+
+....
+core-1.3.0
+elements-2.1.0
+commander-2.0.0
+....
+
+____________________________________________________________________________________________________________________________________________________________________________________________________
+If changes are made to the documentation in between two product
+versions, a new tag will be created for it and a documentation version
+will be appended to the tag. Example: `commander-2.0.0-1.0.1`
+____________________________________________________________________________________________________________________________________________________________________________________________________
+
+[[contribute-to-lisk-documentation]]
+Contribute to Lisk Documentation
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+There are several ways to help improve the documentation:
+
+* https://github.com/LiskHQ/lisk-docs/issues[Create issues]: If mistakes
+are spotted, or you miss certain information.
+* https://github.com/LiskHQ/lisk-docs/pulls[Commit Pull Requests]:
+Before committing any PRs, please have a look at our
+link:CONTRIBUTING.md[Contribution Guidelines].
+* https://lisk.chat/channel/network[Give Feedback on Lisk.chat]: We will
+read it. Just ping `@tschakki` in your message.

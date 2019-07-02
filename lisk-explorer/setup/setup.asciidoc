@@ -1,0 +1,13 @@
+[[lisk-explorer-setup]]
+Lisk Explorer Setup
+-------------------
+
+[cols=",",options="header",]
+|=======================================================================
+|Subcategories |Description
+|link:/documentation/lisk-explorer/setup/pre-install[Pre-Installation]
+|Pre-requisites for installing Lisk Explorer
+
+|link:/documentation/lisk-explorer/setup/install[Installation]
+|Installing Instructions for Lisk Explorer
+|=======================================================================

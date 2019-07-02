@@ -1,0 +1,10 @@
+[[lisk-explorer-user-guide]]
+Lisk Explorer User Guide
+------------------------
+
+[cols=",",options="header",]
+|======================================================================
+|Subcategories |Description
+|link:tools/tools.md[Tools] |Tools currently available on Lisk Explorer
+|link:api/api.md[API] |Description of Lisk Explorer API endpoints
+|======================================================================

@@ -1,0 +1,34 @@
+[[lisk-core-source-upgrade]]
+Lisk Core Source Upgrade
+------------------------
+
+This section details how to upgrade Lisk Core from source.
+
+1.  Stop the node:
++
+[source,bash]
+----
+npx pm2 stop lisk
+----
+2.  Pull the latest https://github.com/LiskHQ/lisk-sdk/releases[tagged
+release] using Git and install node modules.
++
+[source,bash]
+----
+cd lisk # navigate into the root directory of Lisk Core
+git fetch # fetch newest releases
+git checkout vX.Y.Z -b vX.Y.Z # check out latest release tag, see https://github.com/LiskHQ/lisk-sdk/releases
+rm -rf node_modules # remove old node modules
+npm ci # install node modules
+----
+3.  Start the node again:
++
+[source,bash]
+----
+npx pm2 start lisk
+----
+
+_______________________________________________________________________________________________________
+*Note for delegates:* You need to
+link:../configuration.md#forging[enable forging] again after upgrade.
+_______________________________________________________________________________________________________

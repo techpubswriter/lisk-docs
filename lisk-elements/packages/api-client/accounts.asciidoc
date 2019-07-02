@@ -1,0 +1,133 @@
+[[lisk-elements-api-client-accounts-resource]]
+Lisk Elements API Client: Accounts Resource
+-------------------------------------------
+
+This is a resource for interacting with the `accounts` endpoint provided
+by the Lisk public API. Each of the following methods can be accessed
+via the `accounts` property of an `APIClient` instance.
+
+[[get]]
+`get`
+^^^^^
+
+Searches for matching accounts in the system.
+
+[[syntax]]
+Syntax
+++++++
+
+[source,js]
+----
+get([options])
+----
+
+[[parameters]]
+Parameters
+++++++++++
+
+`options`: See options in the
+link:/lisk-core/user-guide/api/1-0/1-0.json[Core API documentation].
+
+[[return-value]]
+Return value
+++++++++++++
+
+`Promise`: Resolves to an API response object.
+
+[[examples]]
+Examples
+++++++++
+
+[source,js]
+----
+client.accounts.get({ username: 'oliver' })
+    .then(res => {
+        console.log(res.data);
+    })
+----
+
+[[getmultisignaturegroups]]
+`getMultisignatureGroups`
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Searches for the specified account in the system and responds with a
+list of the multisignature groups that this account is a member of.
+
+[[syntax-1]]
+Syntax
+++++++
+
+[source,js]
+----
+getMultisignatureGroups(address, [options])
+----
+
+[[parameters-1]]
+Parameters
+++++++++++
+
+`address`: A Lisk address string.
+
+`options`: See options in the
+link:/lisk-core/user-guide/api/1-0/1-0.json[Core API documentation].
+
+[[return-value-1]]
+Return value
+++++++++++++
+
+`Promise`: Resolves to an API response object.
+
+[[examples-1]]
+Examples
+++++++++
+
+[source,js]
+----
+client.accounts.getMultisignatureGroups('15434119221255134066L')
+    .then(res => {
+        console.log(res.data);
+    })
+----
+
+[[getmultisignaturememberships]]
+`getMultisignatureMemberships`
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Searches for the specified multisignature group and responds with a list
+of all members of this particular multisignature group.
+
+[[syntax-2]]
+Syntax
+++++++
+
+[source,js]
+----
+getMultisignatureMemberships(address, [options])
+----
+
+[[parameters-2]]
+Parameters
+++++++++++
+
+`address`: A Lisk address string.
+
+`options`: See options in the
+link:/lisk-core/user-guide/api/1-0/1-0.json[Core API documentation].
+
+[[return-value-2]]
+Return value
+++++++++++++
+
+`Promise`: Resolves to an API response object.
+
+[[examples-2]]
+Examples
+++++++++
+
+[source,js]
+----
+client.accounts.getMultisignatureMemberships('15434119221255134066L')
+    .then(res => {
+        console.log(res.data);
+    })
+----

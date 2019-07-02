@@ -1,0 +1,236 @@
+[[lisk-elements-documentation]]
+Lisk Elements Documentation
+---------------------------
+
+Lisk Elements is a JavaScript library containing several
+separately-installable npm packages, each covering a distinct region of
+Lisk-related functionality.
+
+* link:#lisk-elements-documentation[Introduction]
+* link:#versions[Lisk Elements Version Reference]
+* link:#setup[Setup]
+** link:#pre-installation[Pre-Installation]
+** link:#installation[Installation]
+* link:#upgrade[Upgrade]
+** link:#upgrade-lisk-elements-via-npm[via NPM]
+** link:#upgrade-lisk-elements-via-cdn[via CDN]
+* link:#contribute-to-the-codebase[Contribute to Codebase]
+* link:packages.md[Packages]: Stand-alone packages of Lisk Elements
+* link:packages/api-client.md[API Client]: An API client for interacting
+with nodes on the Lisk network.
+* link:packages/client.md[Client]: A default set of Elements for use by
+clients of the Lisk network
+* link:packages/constants.md[Constants]: A set of Lisk-related
+constants.
+* link:packages/cryptography.md[Cryptography]: Relevant cryptographic
+functions.
+* link:packages/passphrase.md[Passphrase]: Mnemonic passphrase helpers.
+* link:packages/transactions.md[Transactions]: Functions for creating,
+signing and verifying transactions.
+
+[[versions]]
+Versions
+~~~~~~~~
+
+Documentation on https://lisk.io/documentation[lisk.io] keeps up to date
+with version updates. The table below provides an overview about the
+former releases and documentation versions of Lisk Elements.
+
+[cols=",,",options="header",]
+|=======================================================================
+|Version |Release date (yy/mm/dd) |Documentation reference
+|https://github.com/LiskHQ/lisk/releases/tag/v2.1.0[v2.1.0] |19/01/xx
+|_Current version, live on lisk.io/documentation_
+
+|https://github.com/LiskHQ/lisk-elements/releases/tag/v2.0.0[v2.0.0]
+|19/01/07
+|https://github.com/LiskHQ/lisk-docs/blob/elements-2.0.0/introduction.md[Lisk
+Elements 2.0 docs]
+
+|https://github.com/LiskHQ/lisk-elements/releases/tag/v1.1.3[v1.1.3]
+|18/11/22
+|https://github.com/LiskHQ/lisk-docs/blob/elements-1.1.0-1.0.1/introduction.md[Lisk
+Elements 1.1 docs]
+
+|https://github.com/LiskHQ/lisk-elements/releases/tag/v1.0.0[v1.0.0]
+|18/08/06
+|https://github.com/LiskHQ/lisk-docs/blob/elements-1.0.0-1.0.1/introduction.md[Lisk
+Elements 1.0 docs]
+|=======================================================================
+
+[[setup]]
+Setup
+~~~~~
+
+[[supported-platforms]]
+Supported Platforms
++++++++++++++++++++
+
+* Platforms with Node.JS version 8.10 and above.
+
+[[pre-installation]]
+Pre-Installation
+^^^^^^^^^^^^^^^^
+
+Lisk Elements requires https://nodejs.org/[Node.js] as the underlying
+engine for code execution. This document describes how to install Node
+and NPM for installation via NPM.
+
+[[install-node]]
+Install Node
+++++++++++++
+
+Follow the instructions for your operating system on the
+https://nodejs.org/en/download/[Node.js downloads page].
+
+__________________________________________________
+NPM is automatically installed along with Node.js.
+__________________________________________________
+
+[[verify-installation]]
+Verify Installation
++++++++++++++++++++
+
+Confirm that Node.JS and NPM have been successfully installed by running
+
+[source,bash]
+----
+node --version
+npm --version
+----
+
+[[installation]]
+Installation
+^^^^^^^^^^^^
+
+This section details how to install Lisk Elements for a given
+distribution.
+
+___________________________________________________________________________________________________
+As all Packages in Lisk Elements are independent from each other, they
+can be installed seperately.
+___________________________________________________________________________________________________
+
+[[installation-via-npm]]
+Installation via NPM
+++++++++++++++++++++
+
+To install the latest version of Lisk Elements for use as a dependency
+in a Node.js project, please proceed with the following:
+
+*Complete library*
+
+[source,bash]
+----
+npm install --save lisk-elements
+----
+
+*Specific package*
+
+[source,bash]
+----
+npm install --save @liskhq/<package-name>
+----
+
+where `<package-name>` can be any of the link:packages.md[sub packages]
+in Lisk Elements.
+
+For concrete code examples for each package, check the
+link:packages.md[Packages section].
+
+Upon successful completion, NPM will add the Lisk Elements package to
+your `package.json` file.
+
+[[load-via-cdn]]
+Load via CDN
+++++++++++++
+
+Include the following script using the following HTML. The `lisk`
+variable will be exposed.
+
+*Client library*
+
+[source,html]
+----
+<script src="https://js.lisk.io/lisk-client-2.1.0.js"></script>
+----
+
+Or minified:
+
+[source,html]
+----
+<script src="https://js.lisk.io/lisk-client-2.1.0.min.js"></script>
+----
+
+To include other packages of Lisk Elements, replace `lisk-client` with
+any of the link:packages.md[packages] of Lisk Elements.
+
+[[upgrade]]
+Upgrade
+-------
+
+If you already have Lisk Elements installed and wish to upgrade your
+installation, you can follow the instructions below for your specific
+distribution.
+
+[[upgrade-lisk-elements-via-npm]]
+Upgrade Lisk Elements via NPM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+To update your global installation to the latest version of Lisk
+Elements, simply run the following command:
+
+[source,bash]
+----
+npm update --save lisk-elements
+----
+
+[[upgrade-lisk-elements-via-cdn]]
+Upgrade Lisk Elements via CDN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+When a new release is available, simply update the version number
+accordingly. For example, if you want to upgrade from v2.0.0 (minified)
+to v2.1.0 (minified), change this line:
+
+[source,html]
+----
+<script src="https://js.lisk.io/lisk-elements-2.0.0.min.js"></script>
+----
+
+to this:
+
+[source,html]
+----
+<script src="https://js.lisk.io/lisk-elements-2.1.0.min.js"></script>
+----
+
+[[contribute-to-the-codebase]]
+Contribute to the Codebase
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Everyone is invited to contribute to the Lisk Elements project. We
+welcome and appreciate all contributions.
+
+[[github]]
+Github
+^^^^^^
+
+All necessary information can be found on our
+https://github.com/LiskHQ/lisk-sdk/tree/development/elements/lisk-elements[Lisk
+Elements Github].
+
+[[contribution-guidelines]]
+Contribution Guidelines
+^^^^^^^^^^^^^^^^^^^^^^^
+
+Please be sure to read and follow our
+https://github.com/LiskHQ/lisk-sdk/blob/development/docs/CONTRIBUTING.md[Contribution
+Guidelines].
+
+[[gitter]]
+Gitter
+^^^^^^
+
+If you have any further questions please join our
+https://gitter.im/LiskHQ/lisk[Gitter].
