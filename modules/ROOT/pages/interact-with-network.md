@@ -8,7 +8,7 @@ There are several groups that need/want to interact with the network. Below is a
 - __Delegates__ interact with the network by forging new blocks and adding them to the blockchain. A delegate typically is also a __node operator__.
 - __Node operators__ have a general interest in monitoring their node and the network. Their node provides them with a private API that can be used to make different queries or to post transactions to the network. Depending on their preferences, node operators might want to use [Lisk Commander](#a-use-the-command-line), [Lisk Elements](#b-write-scripts-in-javascript) or a graphical interface like [Lisk Hub](#c-use-lisk-hub).
 - __Developers__ test and improve the functionality of their blockchain application. For quick interaction we recommend to use [Lisk Commander](#a-use-the-command-line).
-- __Applications__ interact through the API with the network. For convenience, applications would use wrappers like [@liskHQ/lisk-api-client](../lisk-sdk/lisk-elements/packages/api-client.md). Applications might also want to make use of [Lisk Service](https://github.com/LiskHQ/lisk-service) and its extended API.
+- __Applications__ interact through the API with the network. For convenience, applications would use wrappers like [@liskHQ/lisk-api-client](../../../lisk-sdk/lisk-elements/packages/api-client.md). Applications might also want to make use of [Lisk Service](https://github.com/LiskHQ/lisk-service) and its extended API.
 - __End users__ mostly interact with the network through Graphical User Interfaces such as wallet applications like [Lisk Hub](#c-use-lisk-hub).
 
 ## How to interact with the network
@@ -18,16 +18,16 @@ There are several groups that need/want to interact with the network. Below is a
 You can choose from up to 5 ways to interact with an existing network based on what is most convenient for your needs:
 
 ## A. Use the Command-line
-[Lisk Commander](../lisk-sdk/lisk-commander/introduction.md) is the CLI-tool that lets you interact with the network conveniently through the command line.
+[Lisk Commander](../../../lisk-sdk/lisk-commander/introduction.md) is the CLI-tool that lets you interact with the network conveniently through the command line.
 
-See a list of all commands and their example responses on the [Commands page](../lisk-sdk/lisk-commander/user-guide/commands.md).
+See a list of all commands and their example responses on the [Commands page](../../../lisk-sdk/lisk-commander/user-guide/commands.md).
 
 ## B. Write scripts in Javascript
-[Lisk Elements](../lisk-sdk/lisk-elements/introduction.md) is a collection of Javascript libraries that help applications to interact with the network.
+[Lisk Elements](../../../lisk-sdk/lisk-elements/introduction.md) is a collection of Javascript libraries that help applications to interact with the network.
 
-On the [Packages page](../lisk-sdk/lisk-elements/packages.md) of Lisk Elements, all available libraries are listed and documented.
+On the [Packages page](../../../lisk-sdk/lisk-elements/packages.md) of Lisk Elements, all available libraries are listed and documented.
 
-One of the most useful packages in this regard is the [@liskhq/lisk-api-client](../lisk-sdk/lisk-elements/packages/api-client.md) as it provides a slick interface to interact with the network in Javascript.
+One of the most useful packages in this regard is the [@liskhq/lisk-api-client](../../../lisk-sdk/lisk-elements/packages/api-client.md) as it provides a slick interface to interact with the network in Javascript.
 
 ## C. Use Lisk Hub
 [Lisk Hub](https://lisk.io/hub) is the Graphical User Interface (GUI) to interact with the network.

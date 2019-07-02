@@ -10,7 +10,7 @@ The RPCs and events are also transmitted as JSON objects with additional fields 
 In order to effectively transmit these JSON objects to the other peers, websockets are used via the [SocketCluster Framework](https://socketcluster.io).
 An overview of the architecture of the peer-to-peer communication in Lisk is provided below.
 
-![lisk_protocol-p2parchitecture](assets/lisk_protocol-p2parchitecture.png "lisk_protocol-p2parchitecture")
+![lisk_protocol-p2parchitecture](../assets/lisk_protocol-p2parchitecture.png "lisk_protocol-p2parchitecture")
 
 ## System Headers
 Every time a Lisk node communicates with a peer of the Lisk network, a system header is added to the message. The system headers are used to identify full nodes and provide basic information about the software running on the system.

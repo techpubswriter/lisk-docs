@@ -289,7 +289,7 @@ Each `config.js` file consists of 2 parts:
 1. JSON-schema specification for all available config options
 2. Default values for the available config options for this specific module.
 
-> Please don't change the default values in these files directly as they will be overwritten on software updates, instead define the [custom configuration options](../introduction.md) inside your blockchain application.
+> Please don't change the default values in these files directly as they will be overwritten on software updates, instead define the [custom configuration options](../../introduction.md) inside your blockchain application.
 
 ## Get Involved
 

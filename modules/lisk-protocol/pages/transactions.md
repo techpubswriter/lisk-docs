@@ -28,11 +28,11 @@ The other fields will be added to this schema depending on the transaction type.
 
 A signed transaction uses the following flow:
 
-![lisk_protocol-txid](assets/lisk_protocol-txid.png "lisk_protocol-txid")
+![lisk_protocol-txid](../assets/lisk_protocol-txid.png "lisk_protocol-txid")
 
 With a second signature the flow looks like this:
 
-![lisk_protocol-2ndtxid](assets/lisk_protocol-2ndtxid.png "lisk_protocol-2ndtxid")
+![lisk_protocol-2ndtxid](../assets/lisk_protocol-2ndtxid.png "lisk_protocol-2ndtxid")
 
 ## Balance Transfer Transaction
 
@@ -46,7 +46,7 @@ Optionally, the user can include a data field to the balance transfer transactio
 
 The following figure is a representation of a default transaction object (no optional data field included):
 
-![lisk_protocol-type0](assets/lisk_protocol-type0.png "lisk_protocol-type0")
+![lisk_protocol-type0](../assets/lisk_protocol-type0.png "lisk_protocol-type0")
 
 The following figure is a representation of the JSON.
 
@@ -80,7 +80,7 @@ This data block is then signed using the user’s passphrase, and the signature 
 
 The resulting object is represented by the following diagram:
 
-![lisk_protocol-type1](assets/lisk_protocol-type1.png "lisk_protocol-type1")
+![lisk_protocol-type1](../assets/lisk_protocol-type1.png "lisk_protocol-type1")
 
 The JSON object that will be broadcast on the network is shown below:
 
@@ -119,7 +119,7 @@ This data block is then signed using the account's passphrase, and the signature
 
 The resulting object is represented by the following diagram:
 
-![lisk_protocol-type2](assets/lisk_protocol-type2.png "lisk_protocol-type2")
+![lisk_protocol-type2](../assets/lisk_protocol-type2.png "lisk_protocol-type2")
 
 The JSON object that will be broadcast to the network follows the format below:
 
@@ -159,7 +159,7 @@ This data block is then signed using the account's passphrase, and the signature
 
 The resulting object is represented by the following diagram:
 
-![lisk_protocol-type3](assets/lisk_protocol-type3.png "lisk_protocol-type3")
+![lisk_protocol-type3](../assets/lisk_protocol-type3.png "lisk_protocol-type3")
 
 The JSON object that will be broadcast to the network is the follows the format below:
 
@@ -200,7 +200,7 @@ This data block is then signed using the user’s passphrase, and the signature 
 
 The resulting object is represented by the following diagram:
 
-![lisk_protocol-type4](assets/lisk_protocol-type4.png "lisk_protocol-type4")
+![lisk_protocol-type4](../assets/lisk_protocol-type4.png "lisk_protocol-type4")
 
 The JSON object that will be broadcast to the network follows the format below:
 
@@ -244,7 +244,7 @@ Additional fields can be specified:
 
 Once those fields have been specified, the system will compute the sender account's public key, and start building the transaction’s data block described in the following figure (note that if second passphrase or multisignature are registered in the address, the corresponding fields must be specified too):
 
-![lisk_protocol-type5a](assets/lisk_protocol-type5a.png "lisk_protocol-type5a")
+![lisk_protocol-type5a](../assets/lisk_protocol-type5a.png "lisk_protocol-type5a")
 
 This data block is then signed using the account's passphrase, and the signature is appended to the data block. The system will then compute the fee of the transaction. In the present implementation, the fee for an application registration is 25 LSK. The following is a representation of the resulting JSON object that will be broadcast to the network:
 
@@ -292,7 +292,7 @@ An In Transfer transaction is a transaction used to transfer funds from the main
 
 Once this information is given, the system can compute the sender account's public key and begins building the transaction’s data block with a maximum of 73 bytes as described in the following figure (note that if second passphrase or multisignature are registered in the address, the corresponding fields must be specified too):
 
-![lisk_protocol-type6](assets/lisk_protocol-type6.png "lisk_protocol-type6")
+![lisk_protocol-type6](../assets/lisk_protocol-type6.png "lisk_protocol-type6")
 
 This data block is then signed using the account's passphrase, and the signature is appended to the data block. The system will then compute the fee of the transaction. In the present implementation, the fee for an In Transfer transaction is 0.1 LSK. 
 

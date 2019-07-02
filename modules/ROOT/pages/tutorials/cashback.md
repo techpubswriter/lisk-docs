@@ -39,7 +39,7 @@ As next step, we want to install the `lisk-sdk` package and add it to our projec
 | Python           | 2       |
 
 
-> If you miss some of the dependencies, please go to [Lisk SDK - Pre-Install](../../lisk-sdk/introduction.md#pre-installation) and follow the pre-installation steps for the SDK.
+> If you miss some of the dependencies, please go to [Lisk SDK - Pre-Install](../../../../lisk-sdk/introduction.md#pre-installation) and follow the pre-installation steps for the SDK.
 
 ```bash
 npm init --yes # initialize the manifest file of the project
@@ -89,9 +89,9 @@ The most important one is the `Application` class, which is used in `line 6` to 
 The application instance is used to start the blockchain application at the bottom of `index.js`.
 
 On `line 6`  the application instance gets initialized.
-By passing the parameters for the [genesis block](../../lisk-sdk/configuration.md#the-genesis-block) and the [configuration template](https://github.com/LiskHQ/lisk-sdk/blob/development/sdk/src/samples/config_devnet.json), the application is configured with the most basic configurations to start the node.
+By passing the parameters for the [genesis block](../../../../lisk-sdk/configuration.md#the-genesis-block) and the [configuration template](https://github.com/LiskHQ/lisk-sdk/blob/development/sdk/src/samples/config_devnet.json), the application is configured with the most basic configurations to start the node.
 
-> If you want to change any of the values for `configDevnet`, check out the [full list of configurations](../../lisk-sdk/configuration.md#list-of-configuration-options) for Lisk SDK and overwrite them like described in [step 7](#7-customize-the-default-configuration)
+> If you want to change any of the values for `configDevnet`, check out the [full list of configurations](../../../../lisk-sdk/configuration.md#list-of-configuration-options) for Lisk SDK and overwrite them like described in [step 7](#7-customize-the-default-configuration)
 
 At this point, you already can start the node and the network, to verify that the setup was successful:
 
@@ -196,7 +196,7 @@ The difference between the regular `TransferTransaction` and the `CashbackTransa
 
 So e.g. if Alice sends 100 token to Bob as a Cashback transaction, Bob would receive the 100 token and Alice would receive additional 10 tokens as a cashback.
 
-![Business logic of a cashback transaction](../assets/cashback_diagram.png)
+![Business logic of a cashback transaction](../../assets/cashback_diagram.png)
 
 > If you compare the methods below with the methods we implemented in the `HelloTransaction`, you will notice, that we implement fewer methods for the `CashbackTransaction`.
 > This is because we extend the `CashbackTransaction` from an already existing transaction type `TransferTransaction`.
@@ -579,10 +579,10 @@ For further interaction with the network, it is possible to run the process in t
 ```bash
 pm2 start --name cashback index.js # add the application to pm2 under the name 'cashback'
 pm2 stop cashback # stop the cashback app
-pm2 start cashback # start the cashback app
+pm2 start cashback pages
 ```
 
-> PM2 needs to be installed on the system in order to run these commands. See [SDK Pre-Install section](../../lisk-sdk/introduction.md#pre-installation).
+> PM2 needs to be installed on the system in order to run these commands. See [SDK Pre-Install section](../../../../lisk-sdk/introduction.md#pre-installation).
 
 ## 7. Customize the default configuration
 
@@ -601,7 +601,7 @@ cashback
 
 To run the script from remote, change the configuration before creating the `Application` instance, to make the API accessible:
 
-> For more configuration options, check out the [full list of configurations](../../lisk-sdk/configuration.md#list-of-configuration-options) for Lisk SDK
+> For more configuration options, check out the [full list of configurations](../../../../lisk-sdk/configuration.md#list-of-configuration-options) for Lisk SDK
 
 ```js
 //index.js
