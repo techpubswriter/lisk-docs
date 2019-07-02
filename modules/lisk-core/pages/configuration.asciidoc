@@ -143,7 +143,7 @@ data into the config file under `forging.delegates` array. To encrypt
 your passphrase, we offer and recommend one of the following
 alternatives:
 
-* link:/lisk-commander/user-guide/commands/commands.md[Lisk Commander]
+* link:/modules/lisk-commander/pages/user-guide/commands/commands.md[Lisk Commander]
 via `encrypt passphrase` command
 * link:/lisk-elements/user-guide/cryptography/cryptography.md[Cryptography
 module from Lisk Elements]
@@ -183,7 +183,7 @@ Forging
  "salt=5426da113a5896f11255f69bb49c49eb&cipherText=947b537de9&iv=67d7344ce8a3b2fc879e316a&tag=dc5db5bfb41a3e968278e99651c68523&version=1",
                 "publicKey":
                     "9d3058175acab969f41ad9b86f7a2926c74258670fe56b37c429c01fca9f2f0f"
-           }              
+           }
          ],
         "access": {
             "whiteList": [
@@ -208,7 +208,7 @@ delegate:
 curl \
   http://127.0.0.1:7000/api/node/status/forging \
   -H 'cache-control: no-cache' \
-  -H 'content-type: application/json' 
+  -H 'content-type: application/json'
 ----
 
 The result should be something like this:
