@@ -2,3 +2,6 @@ name: lisk-documentation
 title: Lisk Docs
 version: '0.0'
 start_page: ROOT:start.adoc
+nav:
+- modules/ROOT/nav.adoc
+- modules/lisk-core/nav.adoc
