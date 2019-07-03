@@ -10,6 +10,6 @@ documentation.
 
 Here I refer to a different branch: xref:1.0@lisk-docs:ROOT:start.adoc[To docs-antora].
 
-Here to a different repository: xref:1.1@docs-tschakki:ROOT:start.adoc[To tschakki-docs]
+Here to a different repository: xref:1.1@docs-tschakki:ROOT:index.adoc[To tschakki-docs]
 
-xref:build-blockchain-application.asciidoc[To internal page]
+xref:build-blockchain-app.asciidoc[To internal page]
