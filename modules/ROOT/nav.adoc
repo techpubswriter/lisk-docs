@@ -1,4 +1,5 @@
-* xref:start.adoc[Start]
+* *Getting Started*
+* xref:start.adoc[Documentation Home]
 * Getting started Guides
 ** xref:maintain-node.adoc[Maintain a Node]
 ** xref:interact-with-network.adoc[Interact with the network]
