@@ -1,4 +1,4 @@
-* *Getting Started*
+* *Documentation Overview*
 ** xref:start.adoc[Documentation Home]
 ** Getting started Guides
 *** xref:maintain-node.adoc[Maintain a Node]

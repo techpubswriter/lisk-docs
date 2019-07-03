@@ -74,7 +74,7 @@ docker-compose exec lisk curl "http://localhost:7000/api/node/status" --header "
 Lisk Core normally gets configured by providing a suited [configuration file](../configuration.md).
 But this isn't convenient in a Docker installation.
 Instead, one can use environment variables to change values in the configuration.
-To do so, open the `.env` file, that you created during [docker installation](../setup/docker.md#installation), and adjust the values to your needs.
+To do so, open the `.env` file, that you created during [docker installation](../setup/docker.adoc#installation), and adjust the values to your needs.
 All names of the environment variables start with `ENV_` prefix.
 
 ## Advanced configuration

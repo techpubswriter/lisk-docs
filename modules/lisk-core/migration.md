@@ -54,7 +54,7 @@ Here are the direct download links depending on the network your node is connect
 - [Lisk Bridge for Testnet](https://downloads.lisk.io/lisk/test/lisk_bridge.sh)
 - [Lisk Bridge for Mainnet](https://downloads.lisk.io/lisk/main/lisk_bridge.sh)
 
-It's a wrapper script that invokes `installLisk.sh upgrade` at a specific block height - and thus is intended for users using the [Binary installation](setup/binary.md).
+It's a wrapper script that invokes `installLisk.sh upgrade` at a specific block height - and thus is intended for users using the [Binary installation](setup/binary.adoc).
 
 To upgrade your node on a specific network height, you should download `lisk_bridge.sh` to where you would normally download and run installLisk.sh. 
 In other words, it should be 1 directory up from where the lisk application is stored. 

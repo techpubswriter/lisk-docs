@@ -588,4 +588,4 @@ configDevnet.components.logger.consoleLogLevel = "none"; // no logs will be show
 
 As next step, you can design a nice frontend application like [Lisk Explorer](https://explorer.lisk.io/), which is showing users assets data inside of their account page. 
 
-See also section [Interact with the network](../interact-with-network.md).
+See also section [Interact with the network](../interact-with-network.adoc).

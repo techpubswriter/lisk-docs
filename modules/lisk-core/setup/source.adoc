@@ -39,7 +39,7 @@ To connect to the desired network with Lisk Core, please ensure that the corresp
 | Betanet    | 5000        | 5001        |
 | Devnet     | 4000        | 5000        |
 
-These are the default ports for connecting with the network, they can be altered later in `config.json`. 
+These are the default ports for connecting with the network, they can be altered later in `config.json`.
 
 ### Create a new user
 
@@ -49,7 +49,7 @@ To run and manage a Lisk Core node in the future, please create a separate 'Lisk
 #### Ubuntu
 
 > The `lisk` user itself **does not need** any `sudo` rights to run Lisk Core.
-    
+
 ```bash
 sudo adduser lisk
 ```
@@ -69,7 +69,7 @@ sudo apt install -y build-essential python-minimal
 
 Ensure that both [XCode](https://developer.apple.com/xcode/) and [Homebrew](https://brew.sh/) are installed.
 
-### Git 
+### Git
 
 [Git](https://github.com/git/git) is used for cloning and updating Lisk.
 
@@ -125,16 +125,16 @@ brew install node@10.15.3
 
 ### PostgreSQL
 
-To install Postgres follow the intructions descibed below, depending on the operating system your machine is running on. 
+To install Postgres follow the intructions descibed below, depending on the operating system your machine is running on.
 If you run into issues when trying to set up PostgreSQL on your machine, try to install it inside of a docker container.
 
 > We recommend using Postgres with Docker for a quick and straight forward setup of Postgres.
- 
+
 #### A. Postgres with Docker
 
 Running Postgres inside a Docker container will setup the correct version of Postgres and containerize it away from any existing versions you may have locally on your machine.
 Chose this setup if you are not familiar with Postgres, or if you run in to issues with a previously installed version of Postgres.
-To perform the command below successfully, install Docker like described in the Setup page of [Lisk Core Docker distribution](docker.md).
+To perform the command below successfully, install Docker like described in the Setup page of [Lisk Core Docker distribution](docker.adoc).
 
 > If you have other versions of PostgreSQL installed on your machine, make sure to stop them before starting the docker container.
 
@@ -266,7 +266,7 @@ brew services start redis
 ```
 
 Stop Redis:
-  
+
 ```bash
 brew services stop redis
 ```
@@ -280,7 +280,7 @@ In the next installation phase, remember to update the Redis port configuration 
 
 B. **Change the Redis launch configuration**
 
-Update the launch configuration file on your system. Note that there are many ways to do this. 
+Update the launch configuration file on your system. Note that there are many ways to do this.
 
 The following is one example:
 
@@ -308,7 +308,7 @@ If you are looking to upgrade your current Lisk Core installation, please see [U
 
 ### Login as the Lisk user
 
-This user was created in the [Prerequisites](#pre-install). 
+This user was created in the [Prerequisites](#pre-install).
 If you are already logged in to this user, please skip this step.
 
 ```bash
@@ -357,7 +357,7 @@ For details on how to manage or stop your Lisk node, please have a look in [Admi
 If you are not running Lisk locally, you will need to follow the [Configuration - API](../configuration.md#api-access-control) document to enable access.
 
 That's it!
-You are ready to move on to the [configuration](../configuration.md) documentation if you wish to enable forging or SSL. 
+You are ready to move on to the [configuration](../configuration.md) documentation if you wish to enable forging or SSL.
 
 ## Post-installation (optional)
 

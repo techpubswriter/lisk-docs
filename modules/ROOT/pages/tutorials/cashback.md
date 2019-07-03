@@ -637,4 +637,4 @@ configDevnet.components.logger.consoleLogLevel = "none"; // no logs will be show
 
 As next step, you can use a wallet software like e.g. a customized [Lisk Hub](https://lisk.io/hub), so that users can utlize the new transaction type.
 
-See also section [Interact with the network](../interact-with-network.md).
+See also section [Interact with the network](../interact-with-network.adoc).
