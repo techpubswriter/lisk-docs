@@ -6,3 +6,10 @@ Lisk Documentation
 * point to getting started sections for different actions.
 * quick links to most important/ most popular sections of Lisk
 documentation.
+
+
+Here I refer to a different branch: xref:1.0@lisk-docs:ROOT:start.adoc[To docs-antora].
+
+Here to a different repository: xref:1.1@docs-tschakki:ROOT:start.adoc[To tschakki-docs]
+
+xref:build-blockchain-application.asciidoc[To internal page]
