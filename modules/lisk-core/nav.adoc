@@ -1,5 +1,5 @@
 * *Lisk Core*
-* xref:introduction.adoc[Introduction]
+** xref:introduction.adoc[Introduction]
 * Setup
 ** xref:setup/source.adoc[Source]
 ** xref:setup/docker.adoc[Docker]
