@@ -8,7 +8,7 @@ Lisk Documentation
 documentation.
 
 
-Here I refer to a different branch: xref:1.0@lisk-docs:ROOT:start.adoc[To docs-antora].
+Here I refer to a different branch: xref:1.0@lisk-documentation:ROOT:start.adoc[To docs-antora].
 
 Here to a different repository: xref:1.1@docs-tschakki:ROOT:index.adoc[To tschakki-docs]
 
