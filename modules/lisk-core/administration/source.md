@@ -160,7 +160,7 @@ If you do not specify `--network` argument you will have to load it from `LISK_N
 
 ## Creating snapshots
 
-> For creating [snapshots](../introduction.md#snapshots) the most convenient way, it is recommended to use Lisk Core from [binary distribution](binary.md#create-snapshot).
+> For creating [snapshots](../introduction.adoc#snapshots) the most convenient way, it is recommended to use Lisk Core from [binary distribution](binary.md#create-snapshot).
 > Just execute the script `lisk-snapshot.sh`, what will perform all necessary steps to create a snapshot of the blockchain.
 
 To create a snapshot manually, perform the following steps:
@@ -182,7 +182,7 @@ dropdb lisk_snapshot # delete the snapshot database
 
 ## Rebuild from a snapshot
 
-In some scenarios, it is recommended to restore the blockchain from a [snapshot](../introduction.md#snapshots).
+In some scenarios, it is recommended to restore the blockchain from a [snapshot](../introduction.adoc#snapshots).
 The command blocks below will perform this process.
 The URL can be substituted for another `blockchain.db.gz` snapshot file if desired.
 

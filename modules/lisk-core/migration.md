@@ -1,7 +1,7 @@
 # Lisk Core Migration
 
 > Migration of a Lisk Node is only necessary during a hard fork.
-> For normal software updates that don't invoke a hard fork, please perform a normal upgrade, see [Upgrade vs Migration](introduction.md#upgrade-vs-migration).
+> For normal software updates that don't invoke a hard fork, please perform a normal upgrade, see [Upgrade vs Migration](introduction.adoc#upgrade-vs-migration).
 
 ## What happens during migration
 
@@ -37,7 +37,7 @@ The above should be enough to complete the migration. For more curious users, we
 
 ### Prepare your workspace
 We assume that you have already installed Lisk Core and are familiar with the application. Nevertheless, we want to highlight a couple of things to double-check:
-- Revisit the [setup](introduction.md#lisk-core-distributions) steps before continuing.
+- Revisit the [setup](introduction.adoc#lisk-core-distributions) steps before continuing.
 - Verify that the following ports are open, depending on the network:
 
 | Network | httpPort(HTTP) | wsPort(TCP) |
@@ -102,7 +102,7 @@ Set the LISK_MASTER_PASSWORD environment variable if you want to do secrets migr
 Don't panic!
 Counting from the migration height, you have 2 full forging rounds time to upgrade your node manually by following the steps described in [Migrate manually](#migrate-manually).
 If 2 full forging rounds have already passed since migration, your Node will be probably on a fork after the upgrade.
-To resolve this, rebuild your version of the blockchain [from snaphot](introduction.md#snapshots) or [from genesis block](administration/binary.md#rebuild-from-the-genesis-block).
+To resolve this, rebuild your version of the blockchain [from snaphot](introduction.adoc#snapshots) or [from genesis block](administration/binary.md#rebuild-from-the-genesis-block).
 
 ### Migration Notes Lisk Core 0.9 -> 1.0
 
@@ -128,7 +128,7 @@ To migrate a Lisk node manually, do the following steps:
 2. Run the necessary [utility scripts](#utility-scripts). 
 These scripts prepare the Lisk node for the migration and are required before the upgrade script can run successfully. 
 The utility scripts that need to be run can vary depending on the migration.
-3. Go through the default [upgrade process](introduction.md#upgrade-vs-migration).
+3. Go through the default [upgrade process](introduction.adoc#upgrade-vs-migration).
 
 ## Utility Scripts
 
