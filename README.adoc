@@ -1,0 +1,62 @@
+image:assets/lisk_docu_blog_banner.png[Lisk Documentation]
+
+== Lisk Documentation
+
+Welcome to the Lisk Documentation repository!
+
+Get started with the tutorials and getting started guides:
+
+* link:start/start.md[Documentation Start]
+* link:start/build-blockchain-app.md[Getting started: Build a blockchain
+application]
+* link:start/interact-with-network.md[Getting started: Interact with the
+network]
+* link:start/maintain-node.md[Getting started: Maintain a node]
+* link:start/tutorials.md[Tutorials]
+* link:start/custom-transactions.md[Custom transactions]
+
+See the documentation for each product:
+
+* link:lisk-sdk/introduction.md[Lisk SDK]
+* link:lisk-sdk/introduction.md[Lisk SDK] >
+link:lisk-sdk/lisk-framework/introduction.md[Lisk Framework]
+* link:lisk-sdk/introduction.md[Lisk SDK] >
+link:lisk-sdk/lisk-elements/introduction.md[Lisk Elements] +
+* link:lisk-sdk/introduction.md[Lisk SDK] >
+link:lisk-sdk/lisk-commander/introduction.md[Lisk Commander]
+* link:lisk-core/introduction.md[Lisk Core]
+
+=== View previous versions of the documentation
+
+The versions of the documentation are listed under
+https://github.com/LiskHQ/lisk-docs/releases[Releases] and are tagged by
+release date in the following format:
+
+....
+lisk-docs-yyyy-mm-dd
+....
+
+Additionally, each product’s documentation has its own release tags,
+referring to the product’s versioning scheme. This makes it convenient
+to find the corresponding documentation version for a specific version
+of the product.
+
+Examples:
+
+....
+core-1.3.0
+elements-2.1.0
+commander-2.0.0
+....
+
+=== Contribute to Lisk Documentation
+
+There are several ways to help improve the documentation:
+
+* https://github.com/LiskHQ/lisk-docs/issues[Create issues]: If mistakes
+are spotted, or you miss certain information.
+* https://github.com/LiskHQ/lisk-docs/pulls[Commit Pull Requests]:
+Before committing any PRs, please have a look at our
+link:CONTRIBUTING.md[Contribution Guidelines].
+* https://lisk.chat/channel/network[Give Feedback on Lisk.chat]: We will
+read it. Just ping `+@tschakki+` in your message.
