@@ -381,7 +381,7 @@ successfully kick-start the blockchain application:
 [source,js]
 ----
 const { Application, genesisBlockDevnet, configDevnet} = require('lisk-sdk'); // require the lisk-sdk package
-  
+
 const app = new Application(genesisBlockDevnet, configDevnet); // create a new application with default genesis block for a local devnet
 
 app.run() // start the application
@@ -389,7 +389,7 @@ app.run() // start the application
    .catch(error => { // code that is executed if the application start fails.
         console.error('Faced error in application', error);
         process.exit(1);
-});               
+});
 ----
 
 Now, save and close `+index.js+` and try to start your newly created
@@ -412,7 +412,7 @@ the application further.
 
 For more detailed explanations, check out the getting started sections
 for link:../start/build-blockchain-app.md[building blockchain
-applications] and the link:../start/tutorials.md[example applications],
+applications] and the link:../modules/start/tutorials.md[example applications],
 which describe the process of creating a blockchain application
 step-by-step.
 
