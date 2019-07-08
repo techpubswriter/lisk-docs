@@ -1,4 +1,4 @@
-image:assets/banner_sdk.png[Logo]
+image::assets/banner_sdk.png[Logo]
 
 == Lisk SDK
 
