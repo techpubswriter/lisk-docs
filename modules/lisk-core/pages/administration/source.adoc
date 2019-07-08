@@ -1,21 +1,7 @@
 == Lisk Core Source Administration
+:toc:
 
 This section details how to manage a Source installation of Lisk Core.
-
-* link:#basic-commands[Basic Commands]
-** link:#status[Status of Lisk Core]
-** link:#start[Start Lisk Core]
-** link:#stop[Stop Lisk Core]
-** link:#restart[Restart Lisk Core]
-** link:#delete[Delete Lisk Core]
-** link:#add[Add Lisk Core]
-** link:#logs[Logs]
-* link:#command-line-options[Command Line Options]
-* link:#utility-scripts[Utility scripts]
-** link:#generate-config[Generate Config]
-** link:#update-config[Update Config]
-* link:#creating-snapshots[Creating Snapshots]
-* link:#rebuild-from-a-snapshot[Rebuild from Snapshot]
 
 === Basic Commands
 

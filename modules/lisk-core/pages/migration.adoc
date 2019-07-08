@@ -1,5 +1,5 @@
 == Lisk Core Migration
-
+:toc:
 ____
 Migration of a Lisk Node is only necessary during a hard fork. For
 normal software updates that don’t invoke a hard fork, please perform a
@@ -36,19 +36,7 @@ script for binary distributions of Lisk Core, to make your migration as
 seamless as possible. Additionally, you can find information below on
 how to perform the migration process manually.
 
-The *recommended* migration path is as follows: -
-link:#automated-migration[Automated Migration] -
-link:#prepare-your-workspace[Prepare your workspace] -
-link:#lisk-bridge--automated-lisk-core-migration[Lisk Bridge : Automate
-the upgrade] -
-link:#what-if-i-miss-the-block-height-or-if-lisk-bridge-script-fails[What
-if I miss the block height or if Lisk Bridge script fails] -
-link:#lisk-bridge-command-reference[Lisk Bridge Command Reference] -
-link:#migration-notes-lisk-core-0.9-1.0[Migration Notes Lisk Core 0.9 ->
-1.0]
-
-The above should be enough to complete the migration. For more curious
-users, we’ve included a few more advanced sections: -
+For more curious users, we’ve included a few more advanced sections: -
 link:#migrate-manually[Migrate manually] - link:#utility-scripts[Utility
 scripts] - link:#generate-config[Generate Config] -
 link:#update-config[Update Config] - link:#console[Console]

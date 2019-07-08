@@ -1,4 +1,5 @@
 == Lisk Commander Documentation
+:toc:
 
 Lisk Commander is a Command Line Interface tool designed to be a low
 entry point and the most convenient tool for developers who are looking
@@ -18,27 +19,9 @@ carry out Lisk-related functionality.
 
 *What can I do with Lisk Commander?*
 
-<<<<<<< HEAD - create a transaction - decrypt/encrypt passphrases or
-messages - install and manage a Lisk node - create accounts - get
-delegates - … many more examples can be found on the
-link:user-guide/commands.md[commands] page. ======= - Create a
-transaction - Decrypt/encrypt passphrases or messages - Install and
+Create a transaction - Decrypt/encrypt passphrases or messages - Install and
 manage a node - Create accounts - Get delegates - And many more!
-link:user-guide/commands.md[View all commands] >>>>>>> tmp-sdk
-
-=== Table of contents
-
-* link:#lisk-commander-documentation[Introduction]
-** link:#versions[Lisk Commander Version Reference]
-** link:#setup[Setup]
-*** link:#pre-installation[Pre-Installation]
-*** link:#installation[Installation]
-** link:#upgrade[Upgrade]
-** link:#contribute-to-the-codebase[Contribute to Codebase]
-* link:user-guide.md[User Guide]
-* link:user-guide/lisk-core.md[Lisk Core Commands]
-* link:user-guide/commands.md[General Command Reference]
-* link:user-guide/sensitive-inputs.md[Sensitive Inputs]
+link:user-guide/commands.md[View all commands].
 
 === Versions
 

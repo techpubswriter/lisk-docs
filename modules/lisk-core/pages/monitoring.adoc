@@ -1,3 +1,6 @@
+= Monitoring
+:toc:
+
 == Log Monitoring
 
 The link:configuration.md#file-log-stream[log files] provide a
@@ -22,24 +25,7 @@ keeps track of the performance of any activity, e.g. an HTTP API call or
 a background process from Lisk Core jobs queue.
 
 Following steps should provide you with the insights of why and how to
-monitor your Lisk Core node using New Relic instrumentation:
-
-[arabic]
-. link:#enable-new-relic[Enable New Relic]
-[arabic]
-.. link:#get-new-relic-license-key[Get New Relic license key]
-.. link:#add-license-key[Add license key]
-* link:#option-1-as-environment-variable[Option 1: As environment
-variable]
-* link:#option-2-in-newrelicjs[Option 2: In newrelic.js]
-.. link:#restart-lisk-core-node[(Re)start Lisk Core node]
-. link:#keep-your-node-busy[Keep your node busy]
-* link:#option-1-lisk-core-test-suite[Option 1: Lisk Core Test Suite]
-* link:#option-2-apache-bench[Option 2: Apache Bench]
-* link:#option-3-siege[Option 3: Siege]
-* link:#option-4-custom-script[Option 4: Custom script]
-. link:#analysis-with-new-relic[Analysis with New Relic]
-. link:#faq[FAQ]
+monitor your Lisk Core node using New Relic instrumentation.
 
 === Enable New Relic
 
@@ -226,7 +212,7 @@ Here are the steps we follow:
 
 [source,bash]
 ----
-$ cd ~/lisk_repo 
+$ cd ~/lisk_repo
 ~/lisk_repo $ export NEW_RELIC_LICENSE_KEY=xxxxxxxxxxx
 ~/lisk_repo $ npx pm2 start lisk
 ----

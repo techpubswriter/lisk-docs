@@ -1,41 +1,8 @@
 == Lisk Elements Cryptography
+:toc:
 
 The Lisk Elements cryptography module provides all the cryptographic
 functionality necessary when interacting with the Lisk ecosystem.
-
-* link:#installation[Installation]
-* link:#upgrade[Upgrade]
-* link:#usage[Usage]
-* link:#constants[Constants]
-* link:#methods-for-converting-between-formats[Methods for converting
-between formats]
-** link:#buffertohex[bufferToHex]
-** link:#getAddressFromPublicKey[getAddressFromPublicKey]
-** link:#hextobuffer[HexToBuffer]
-** link:#parseEncryptedPassphrase[parseEncryptedPassphrase]
-** link:#stringifyEncryptedPassphrase[stringifyEncryptedPassphrase]
-* link:#methods-for-encrypting-and-decrypting[Methods for encrypting and
-decrypting]
-** link:#decryptMessageWithPassphrase[decryptMessageWithPassphrase]
-** link:#decryptPassphraseWithPassword[decryptPassphraseWithPassword]
-** link:#encryptMessageWithPassphrase[encryptMessageWithPassphrase]
-** link:#encryptPassphraseWithPassword[encryptPassphraseWithPassword]
-* link:#methods-for-hashing[Methods for hashing]
-** link:#hash[hash]
-* link:#methods-for-managing-keys[Methods for managing keys]
-** link:#getAddressAndPublicKeyFromPassphrase[getAddressAndPublicKeyFromPassphrase]
-** link:#getAddressFromPassphrase[getAddressFromPassphrase]
-** link:#getKeys[getKeys]
-** link:#getPrivateAndPublicKeyFromPassphrase[getPrivateAndPublicKeyFromPassphrase]
-** link:#printSignedMessage[printSignedMessage]
-* link:#methods-for-signing-and-verifying[Methods for signing and
-verifying]
-** link:#printSignedMessage[printSignedMessage]
-** link:#signAndPrintMessage[signAndPrintMessage]
-** link:#signMessageWithPassphrase[signMessageWithPassphrase]
-** link:#signMessageWithTwoPassphrases[signMessageWithTwoPassphrases]
-** link:#verifyMessageWithPublicKey[verifyMessageWithPublicKey]
-** link:#verifyMessageWithTwoPublicKeys[verifyMessageWithTwoPublicKeys]
 
 === Installation
 

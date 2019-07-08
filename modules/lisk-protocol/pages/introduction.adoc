@@ -1,14 +1,5 @@
 == The Lisk Protocol
-
-=== Table of contents
-
-[cols=",",options="header",]
-|===
-|Blockchain |Network
-|link:blocks.md[Blocks] |link:p2p-communication.md[Peers Communication]
-|link:security.md[Security] |link:transactions.md[Transactions]
-| |link:consensus.md[Consensus]
-|===
+:toc:
 
 === What is Lisk?
 

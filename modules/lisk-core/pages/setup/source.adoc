@@ -1,21 +1,5 @@
 == Lisk Core from Source Setup
-
-* link:#pre-install[Pre-Installation]
-[arabic]
-. link:#open-necessary-ports[Open necessary ports]
-. link:#create-a-new-user[Create a new user]
-. link:#toolchain-components[Install Tool chain components]
-. link:#git[Git]
-. link:#nodejs[Node.js]
-** link:#node-version-manager[Node version manager]
-. link:#postgresql[Postgres]
-. link:#pm2-optional[PM2 (optional)]
-. link:#redis-optional[Redis (optional)]
-* link:#installation[Installation]
-[arabic]
-. link:#login-as-the-lisk-user[Login as the Lisk user]
-. link:#installing-lisk-from-source[Installing Lisk from Source]
-* link:#post-installation-optional[Post-installation (optional)]
+:toc:
 
 === Pre-Install
 

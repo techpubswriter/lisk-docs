@@ -1,4 +1,5 @@
 == Managing Lisk Core
+:toc:
 
 Install and manage an instance of Lisk Core.
 
@@ -10,19 +11,6 @@ script]. To manage Lisk Core with Lisk Commander, first uninstall the
 old version and perform a fresh
 link:#lisk-coreinstall-name[installation].
 ____
-
-* link:#lisk-coreinstall-name[lisk core:install NAME]
-* link:#lisk-corelogs-name[lisk core:logs NAME]
-* link:#lisk-corerestart-name[lisk core:restart NAME]
-* link:#lisk-corestart-name[lisk core:start NAME]
-* link:#lisk-corestartcache-name[lisk core:start:cache NAME]
-* link:#lisk-corestartdatabase-name[lisk core:start:database NAME]
-* link:#lisk-corestatus-name[lisk core:status NAME]
-* link:#lisk-corestop-name[lisk core:stop NAME]
-* link:#lisk-corestopcache-name[lisk core:stop:cache NAME]
-* link:#lisk-corestopdatabase-name[lisk core:stop:database NAME]
-* link:#lisk-coreuninstall-name[lisk core:uninstall NAME]
-* link:#lisk-coreupgrade-name[lisk core:upgrade NAME]
 
 === lisk core:install NAME
 

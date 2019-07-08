@@ -1,31 +1,8 @@
 == Lisk Elements API Client
+:toc:
 
 The Lisk Elements API Client provides a convenient wrapper for
 interacting with the public API of nodes on the Lisk network.
-
-* link:#installation[Installation]
-* link:#upgrade[Upgrade]
-* link:#apiclient[API Client]
-* link:#constants[Constants]
-* link:#methods-associated-with-a-resource[Methods associated with a
-resource]
-** link:api-client/accounts.md[Accounts]
-** link:api-client/blocks.md[Blocks]
-** link:api-client/dapps.md[Dapps]
-** link:api-client/delegates.md[Delegates]
-** link:api-client/node.md[Node]
-** link:api-client/peers.md[Peers]
-** link:api-client/signatures.md[Signatures]
-** link:api-client/transactions.md[Transactions]
-** link:api-client/voters.md[Voters]
-** link:api-client/votes.md[Votes]
-* link:#methods-not-associated-with-a-resource[Methods not associated
-with a resource]
-** link:#initialize[initialize]
-** link:#getNewNode[getNewNode]
-** link:#banActiveNodeAndSelect[banActiveNodeAndSelect]
-** link:#hasAvailableNodes[hasAvailableNodes]
-** link:#isBanned[isBanned]
 
 === Installation
 

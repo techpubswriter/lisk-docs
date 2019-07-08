@@ -1,13 +1,8 @@
 == Lisk Commander User Guide
+:toc:
 
 This guide details important information on how to use and configure
 Lisk Commander.
-
-* link:#usage[Usage]
-* link:#configuration[Configuration]
-* link:user-guide/lisk-core.md[Lisk Core Commands]
-* link:user-guide/commands.md[General Command Reference]
-* link:user-guide/sensitive-inputs.md[Sensitive Inputs]
 
 === Usage
 
@@ -63,14 +58,14 @@ lisk config:show
         "network": "main"  // Specify a default network. It can be "main", "test", "beta" or a custom nethash.
     },
     "pretty": false // Pretty print JSON output if set to true.
-} 
+}
 ----
 
 ==== Configure the network
 
 [source,bash]
 ----
-lisk config:set api.network <NETWORK> 
+lisk config:set api.network <NETWORK>
 ----
 
 Possible values for `+<NETWORK>+` are, `+test+` for Testnet, `+main+`

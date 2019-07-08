@@ -1,25 +1,11 @@
 == Lisk Core Docker Administration
+:toc:
 
 This section details how to work with a Docker-based Lisk Core
 installation. Listed below are available basic commands which can be
 used to manage your Docker-based Lisk node. For more details, see each
 commands reference below. A summary of all commands and associated flags
 has been provided for advanced users.
-
-* link:#basic-commands[Basic commands]
-** link:#status[Status of Lisk Core]
-** link:#start[Start Lisk Core]
-** link:#stop[Stop Lisk Core]
-** link:#reload[Reload Lisk Core]
-** link:#reset--coldstart[Reset Lisk Core]
-** link:#logs[Show logs]
-** link:#run-a-command[Run command]
-* link:#configuration[Configuration]
-* link:#advanced-configuration[Advanced Configuration]
-** link:#examples[Examples]
-* link:#sync-from-snapshot[Sync from snapshot]
-** link:#automated[Automated]
-** link:#manually[Manually]
 
 === Basic Commands
 

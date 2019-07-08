@@ -1,12 +1,5 @@
 == Lisk Core Configuration
-
-* link:#structure[Structure]
-* link:#api-access-control[API access control]
-* link:#forging[Forging]
-** link:#check-forging[Check forging]
-** link:#enable-disable-forging[Enable/Disable forging]
-* link:#ssl[SSL]
-* link:#logging[Logging]
+:toc:
 
 === Structure
 
@@ -125,7 +118,7 @@ The `+config.json+` file and a description of each parameter.
                     "headersTimeout": 5000, // Indicating the minimum amount of time an idle connection has to be kept opened (in seconds).
                     "serverSetTimeout": 20000, // Time to wait for response from server before timing out.
                 },
-                "cors": { 
+                "cors": {
                     "origin": "*", // Defines the domains, that the resource can be accessed by in a cross-site manner. Defaults to all domains.
                     "methods": ["GET", "POST", "PUT"], // Defines the allowed methods for CORS.
                 },
@@ -290,7 +283,7 @@ password you want to use for encryption.
                 "encryptedPassphrase": "iterations=1&salt=476d4299531718af8c88156aab0bb7d6&cipherText=663dde611776d87029ec188dc616d96d813ecabcef62ed0ad05ffe30528f5462c8d499db943ba2ded55c3b7c506815d8db1c2d4c35121e1d27e740dc41f6c405ce8ab8e3120b23f546d8b35823a30639&iv=1a83940b72adc57ec060a648&tag=b5b1e6c6e225c428a4473735bc8f1fc9&version=1",
                 "publicKey": "9d3058175acab969f41ad9b86f7a2926c74258670fe56b37c429c01fca9f2f0f"
             }
-        ], 
+        ],
     },
 
 "http_api": { // Contains options for the API module.
@@ -315,7 +308,7 @@ delegate:
 curl \
   http://127.0.0.1:7000/api/node/status/forging \
   -H 'cache-control: no-cache' \
-  -H 'content-type: application/json' 
+  -H 'content-type: application/json'
 ----
 
 The result should be something like this:
@@ -541,7 +534,7 @@ Example values:
 
 [source,bash]
 ----
-/path/to/lisk/logs/mainnet/*.log { 
+/path/to/lisk/logs/mainnet/*.log {
         daily                   # daily rotation
         rotate 5                # keep the 5 most recent logs
         maxage 14               # remove logs that are older than 14 days

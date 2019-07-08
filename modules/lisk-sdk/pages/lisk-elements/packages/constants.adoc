@@ -1,11 +1,8 @@
 == Lisk Elements Constants
+:toc:
 
 The Lisk Elements Constants object provides some handy general-purpose
 constants for use with the Lisk Ecosystem.
-
-* link:#installation[Installation]
-* link:#upgrade[Upgrade]
-* link:#usage[Usage]
 
 === Installation
 

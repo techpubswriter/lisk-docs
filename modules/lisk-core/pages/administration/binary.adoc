@@ -1,33 +1,8 @@
 == Lisk Core Binary Administration
+:toc:
 
 This section details how to work with a Binary installation of Lisk
 Core. For further details, see each commands reference below.
-
-=== Table of contents
-
-* link:#basic-commands[Basic commands]
-** link:#status[Status of Lisk Core]
-** link:#start[Start Lisk Core]
-** link:#stop[Stop Lisk Core]
-** link:#reload[Reload Lisk Core]
-** link:#reset--coldstart[Reset Lisk Core]
-** link:#logs[Show logs]
-** link:#help[Show Help]
-* link:#management-tools[Management tools]
-** link:#update-path-environment-variable[Update PATH environment
-variable]
-** link:#pm2[pm2]
-** link:#psql[psql]
-* link:#utility-scripts[Utility scripts]
-** link:#generate-config[Generate Config]
-** link:#update-config[Update Config]
-* link:#advanced-commands[Advanced commands]
-** link:#create-snapshot[Create Snapshot]
-** link:#rebuild-from-snapshot[Rebuild from Snapshot]
-** link:#start-node-only[Start Lisk Core process only]
-** link:#stop-node-only[Stop Lisk Core process only]
-** link:#start-database-only[Start database only]
-** link:#stop-database-only[Stop database only]
 
 === Basic Commands
 

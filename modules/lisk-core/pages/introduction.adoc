@@ -1,32 +1,5 @@
 == Lisk Core Documentation
-
-=== Table of contents
-
-* link:#lisk-core-documentation[Lisk Core Overview]
-** link:#versions[Versions]
-** link:#versioning-schemes[Versioning Schemes]
-** link:#upgrade-vs-migration[Upgrade vs Migration]
-** link:#networks[Networks]
-** link:#distributions[Distributions]
-** link:#snapshots[Snapshots]
-** link:#technology-stack[Technology stack]
-** link:#contribute-to-the-codebase[Contribute to Codebase]
-* Setup
-** link:setup/binary.md[Binary]
-** link:setup/docker.md[Docker]
-** link:setup/source.md[Source]
-* Upgrade
-** link:upgrade/binary.md[Binary]
-** link:upgrade/docker.md[Docker]
-** link:upgrade/source.md[Source] +
-* link:migration.md[Migration]
-* Administration
-** link:administration/binary.md[Binary]
-** link:administration/docker.md[Docker]
-** link:administration/source.md[Source]
-* link:configuration.md[Configuration]
-* link:api.json[API]
-* link:troubleshooting.md[Troubleshooting]
+:toc:
 
 === Introduction
 
@@ -130,7 +103,7 @@ by a 3 digit notation `+<MAJOR>.<MINOR>.<PATCH>+` , where the individual
 digits represent the following types of software changes:
 
 ....
-v<MAJOR>.<MINOR>.<PATCH> 
+v<MAJOR>.<MINOR>.<PATCH>
 
 v     - Version prefix
 MAJOR - Breaking change

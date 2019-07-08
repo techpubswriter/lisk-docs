@@ -1,29 +1,8 @@
 == Lisk Core Binary Setup
+:toc:
 
 This document details how to setup Lisk Core Binary distribution on a
 system.
-
-* link:#option-a-lisk-commander[Option A: Lisk Commander]
-** link:#pre-install[Pre-Install]
-[arabic]
-. link:#determine-if-your-platform-can-run-lisk-core[Determine if your
-platform can run Lisk Core]
-. link:#open-the-necessary-ports[Open necessary ports]
-. link:#install-lisk-commander[Install Lisk Commander]
-** link:#installation[Installation]
-* link:#option-b-the-bash-script[Option B: The Bash script]
-** link:#pre-install-1[Pre-Install]
-[arabic]
-. link:#determine-if-your-platform-can-run-lisk-core-1[Determine if your
-platform can run Lisk Core]
-. link:#install-dependencies[Install dependencies]
-. link:#create-a-user-to-run-lisk[Create `+lisk+` user]
-** link:#installation-1[Installation]
-[arabic]
-. link:#login-to-the-lisk-user[Login as lisk user]
-. link:#execute-the-installation-script[Execute the installation script]
-. link:#verify-successful-installation[Verify successful installation]
-* link:#post-installation-optional[Post-Installation (optional)]
 
 == Option A: Lisk Commander
 

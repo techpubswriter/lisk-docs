@@ -1,18 +1,5 @@
 == Lisk Core Docker Setup
-
-* link:#pre-install[Pre-Install]
-[arabic]
-. link:#mac-os-x[Mac OS X]
-. link:#windows[Windows]
-. link:#linux[Linux]
-. link:#open-necessary-ports[Open necessary ports]
-. link:#create-a-new-user[Create a new user]
-* link:#installation[Installation]
-[arabic]
-. link:#get-configuration-and-makefile[Get configuration and Makefile]
-. link:#set-environment-variables[Set environment variables]
-. link:#coldstart-application[Coldstart application] +
-* link:#post-installation-optional[Post-Install]
+:toc:
 
 === Pre-install
 

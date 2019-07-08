@@ -1,46 +1,5 @@
 == Lisk Commander Reference
-
-* link:#account[Account]
-** link:#create-account[account:create]
-** link:#get-account[account:get]
-** link:#show-account[account:show]
-* link:#block[Block]
-** link:#get-block[block:get]
-* link:#config[Config]
-** link:#show-config[config:show]
-** link:#set-config[config:set]
-* link:#copyright[copyright]
-* link:#delegate[Delegate]
-** link:#get-delegate[delegate:get]
-** link:#get-voters-of-a-delegate[delegate:voters]
-** link:#get-votes-of-a-delegate[delegate:votes]
-* link:#help[help]
-* link:#message[Message]
-** link:#decrypt-message[message:decrypt]
-** link:#encrypt-message[message:encrypt]
-** link:#sign-message[message:sign]
-** link:#verify-message[message:verify]
-* link:#node[Node]
-** link:#forging[node:forging]
-** link:#get-node[node:get]
-* link:#passphrase[Passphrase]
-** link:#decrypt-passphrase[passphrase:decrypt]
-** link:#encrypt-passphrase[passphrase:encrypt]
-* link:#signature[Signature]
-** link:#broadcast-signature[signature:broadcast]
-** link:#create-signature[signature:create]
-* link:#transaction[Transaction]
-** link:#broadcast-transaction[transaction:broadcast]
-** link:#create-transaction[transaction:create]
-*** link:#transfer-transaction[transaction:create:transfer]
-*** link:#second-passphrase-transaction[transaction:create:second-passphrase]
-*** link:#register-delegate-transaction[transaction:create:delegate]
-*** link:#cast-votes-transaction[transaction:create:vote]
-*** link:#multisignature-account-registration[transaction:create:multisignature]
-** link:#get-transaction[transaction:get]
-** link:#sign-transaction[transaction:sign]
-** link:#verify-transaction[transaction:verify]
-* link:#warranty[warranty]
+:toc:
 
 === Account
 
@@ -293,7 +252,7 @@ OPTIONS
 
 EXAMPLES
   config:set pretty true
-  config:set api.network test 
+  config:set api.network test
   config:set api.nodes https://127.0.0.1:4000,http://mynode.com:7000
 ----
 
@@ -1213,7 +1172,7 @@ OPTIONS
       Optional UTF8 encoded data (maximum of 64 bytes) to include in the transaction asset.
         Examples:
         - --data=customInformation
-        
+
   -j, --[no-]json
       Prints output in JSON format. You can change the default behaviour in your config.json file.
 

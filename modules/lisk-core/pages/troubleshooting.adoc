@@ -1,23 +1,5 @@
 == Lisk Core Troubleshooting
-
-=== Overview
-
-==== Setup
-
-* *[Binary]* link:#a-process-is-already-listening-on-port-5432-binary[A
-process is already listening on port 5432]
-* *[Source]* link:#role-lisk-does-not-exist-source[error: role ``lisk''
-does not exist]
-* *[Source]*
-link:#nothing-shown-in-console-after-starting-lisk-core-source[Nothing
-shown in console after starting Lisk Core]
-
-==== Administration
-
-* link:#enable-forging-delegate-not-found[Enable forging: delegate not
-found]
-* link:#enable-forging-invalid-password-and-public-key-combination[Enable
-forging: Invalid password and public key combination]
+:toc:
 
 === Setup
 
