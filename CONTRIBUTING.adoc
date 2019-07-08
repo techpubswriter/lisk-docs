@@ -1,18 +1,5 @@
 == Lisk Documentation
-
-* link:#workflow[Workflow]
-** link:#adding-new-content[Adding new content]
-** link:#releasing-new-versions[Releasing new versions]
-** link:#changes-between-versions[Changes between versions]
-* link:#style-guidelines[Style Guidelines]
-** link:#writing-in-markdown[Writing in Markdown]
-*** link:#headings[Headings]
-*** link:#cross-reference-links[Cross-reference Links]
-*** link:#images[Images]
-** link:#document-structure[Document structure]
-*** link:#introduction-page[Introduction page]
-*** link:#structuring-content[Structuring content]
-** link:#notes[Notes]
+:toc:
 
 === Workflow
 
@@ -175,6 +162,15 @@ git merge core-1.0.0-1.1.0
 ----
 git checkout master
 git merge -s recursive -Xsubtree=lisk-core dev-core
+----
+
+==== Convert Markdown to Asciidoc
+
+[source,bash]
+----
+find . -name \*.md -not -path './.git/*' -exec pandoc -f markdown -t asciidoc -o {}.adoc {} \;
+find . -type f -name "*.adoc" -exec rename s/".md"/""/g {} \;
+git rm -r **/*.md
 ----
 
 === Style guidelines
