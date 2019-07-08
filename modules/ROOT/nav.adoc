@@ -1,6 +1,10 @@
-* *Documentation Overview*
-** xref:start.adoc[Documentation Home]
-** Getting started Guides
+* *xref:start.adoc[Documentation Overview]*
+** *Getting started Guides*
 *** xref:maintain-node.adoc[Maintain a Node]
 *** xref:interact-with-network.adoc[Interact with the network]
 *** xref:build-blockchain-app.adoc[Build a blockchain application]
+** *xref:tutorials.adoc[Tutorials]*
+*** xref:tutorials/hello-world.adoc[Hello World app]
+*** xref:tutorials/cashback.adoc[Cashback app]
+** xref:custom-transactions.adoc[Custom Transactions]
+** xref:resources.adoc[Resources]

@@ -4,4 +4,6 @@ version: '2.0'
 start_page: ROOT:start.adoc
 nav:
 - modules/ROOT/nav.adoc
+- modules/lisk-sdk/nav.adoc
 - modules/lisk-core/nav.adoc
+- modules/lisk-protocol/nav.adoc
