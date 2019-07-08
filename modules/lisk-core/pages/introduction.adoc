@@ -212,7 +212,7 @@ ____
 
 The Lisk Core consists of 4 main technologies:
 
-https://nodejs.org[image:assets/nodejs.png[Node.js,title="Node.js"]]
+https://nodejs.org[image:nodejs.png[Node.js,title="Node.js"]]
 
 https://nodejs.org/[Node.js] serves as the underlying engine for code
 execution in Lisk Core. Node.js is an open-source, cross-platform
@@ -220,7 +220,7 @@ JavaScript run-time environment that executes JavaScript code
 server-side. Node.js uses an event-driven, non-blocking I/O model that
 makes it lightweight and efficient.
 
-https://swagger.io[image:assets/swagger-logo.png[Swagger,title="Swagger"]]
+https://swagger.io[image:swagger-logo.png[Swagger,title="Swagger"]]
 
 https://swagger.io[Swagger] is an open source software framework backed
 by a large ecosystem of tools that helps developers design, build,
@@ -228,7 +228,7 @@ document, and consume RESTful Web services. As part of the Lisk Core
 documentation, the whole API specification can be explored interactively
 via the Swagger-UI interface.
 
-https://www.postgresql.org[image:assets/postgresql.png[PostgreSQL,title="PostgreSQL"]]
+https://www.postgresql.org[image:postgresql.png[PostgreSQL,title="PostgreSQL"]]
 
 https://www.postgresql.org[PostgreSQL] is a powerful, open source
 object-relational database system with over 30 years of active
@@ -236,7 +236,7 @@ development which has earned it a strong reputation for reliability,
 feature robustness, and performance. All Information on the Lisk
 mainchain is stored inside of PostgreSQL databases.
 
-https://redis.io[image:assets/redis.png[Redis,title="Swagger"]]
+https://redis.io[image:assets/images/redis.png[Redis,title="Swagger"]]
 
 https://redis.io[Redis] is an open source, in-memory data structure
 store. Lisk Core mainly uses it to cache API responses. This prevents
