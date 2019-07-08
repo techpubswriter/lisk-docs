@@ -1,7 +1,7 @@
-== Lisk Documentation
+= Lisk Documentation
 :toc:
 
-=== Workflow
+== Workflow
 
 This section describes general processes that need to be followed when
 contributing to the `+lisk-docs+` repository.
@@ -46,7 +46,7 @@ https://docs.lisk.io.
 New issues must be labeled after Product, and should be added to a
 milestone.
 
-==== Adding new content
+=== Adding new content
 
 [arabic]
 . *Create an issue:* If the corresponding issue for the content you want
@@ -69,7 +69,7 @@ GitHub*: `+git push origin 123-description-of-the-branch+`.
 . On GitHub, open a pull request as usual, reference the issue it
 solves, and add a short summary of the made changes.
 
-==== Releasing new versions
+=== Releasing new versions
 
 When all issues that belong to a milestone are closed, the current
 version branch is merged into the `+dev-+` branch.
@@ -93,7 +93,7 @@ branches is merged. The tag is simple date format, e.g. new content got
 merged into `+master+` at February the 15th 2018, the tag for master
 would be `+lisk-docs-2018-02-15+`.
 
-==== Changes between versions
+=== Changes between versions
 
 In case changes to the documentation need to be made after an official
 release of the documentation, create a new branch for updating the
@@ -164,7 +164,7 @@ git checkout master
 git merge -s recursive -Xsubtree=lisk-core dev-core
 ----
 
-==== Convert Markdown to Asciidoc
+=== Convert Markdown to Asciidoc
 
 [source,bash]
 ----
@@ -173,7 +173,7 @@ find . -type f -name "*.adoc" -exec rename s/".md"/""/g {} \;
 git rm -r **/*.md
 ----
 
-=== Style guidelines
+== Style guidelines
 
 To keep the documentation experience intuitive and consistent for the
 user, each product documentation needs to follow the common style
@@ -182,7 +182,7 @@ guidelines for Lisk Documentation.
 Please read it carefully and use it as a checklist before and after
 every participation.
 
-==== Writing in markdown
+=== Writing in markdown
 
 The whole documentation content is written in Markdown.
 
@@ -190,7 +190,7 @@ For reference:
 https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet[Markdown
 Cheatsheet]
 
-===== Headings
+==== Headings
 
 Headings create automatically internal anchors that can be referenced in
 other parts of the documentation. Use headings to structure the content
@@ -208,19 +208,19 @@ of each page.
 [...]
 ....
 
-===== Cross-reference links
+==== Cross-reference links
 
 ____
 The cross-reference links can be easily broken. Remember this section
 when removing or adding pages, sections or headings.
 ____
 
-====== When to use references
+===== When to use references
 
 * In table of contents
 * Inside of the content. Scan content for helpful cross-references
 
-====== How to create references
+===== How to create references
 
 ____
 Use internal / relative links instead of external links where possible.
@@ -236,7 +236,7 @@ ____
 ## Section 1
 ....
 
-===== Images
+==== Images
 
 ____
 Only include images, if they are informative for the user.
@@ -255,11 +255,11 @@ Example:
 ![alt text for lisk logo](lisk_protocol-Logo.svg "Logo Title Text")
 ....
 
-==== Document structure
+=== Document structure
 
 When to use new pages, sub pages or sections for new content.
 
-===== Introduction page
+==== Introduction page
 
 On root level of each product documentation you find an introduction
 page for the respective product. This page is always required.
@@ -276,7 +276,7 @@ e.g. highlight use cases and top features.
 . *Codebase reference:* Link to the GitHub repository of the product,
 and reference contribution guidelines.
 
-===== Structuring content
+==== Structuring content
 
 The following list gives some suggestions how to structure the content:
 
@@ -289,7 +289,7 @@ each other.
 . *Section in page:* Content that is closely connected to the content of
 the other sections / the main title of the page.
 
-==== Notes
+=== Notes
 
 If certain content needs to be highlighted or deserves special attention
 from the reader, use notes as described below.
