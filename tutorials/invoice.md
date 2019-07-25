@@ -198,12 +198,38 @@ $ node index.js | npx bunyan -o short
 
 ## 3. Create the new transaction types
 
+Now that the SDK is setup successfully, we want to create 2 new transaction types:
+
+- InvoiceTransaction: For sending invoices to the network.
+- PaymentTransaction: For paying a particular invoice.
+
 ## InvoiceTransaction
+
+The InvoiceTransaction requires an `asset` field with the following properties. 
+
+> Note: The `requestedAmount` input is expressed in Beddows (1 LSK = 10^8 Beddows).
+
+```js
+const tx = new InvoiceTransaction({ 
+    asset: {
+      "client": "World GmbH",
+      "requestedAmount": `${transactions.utils.convertLSKToBeddows(10)}`,
+      "description": "Test invoice"  
+    },
+    recipientId: '123L',
+    fee: transactions.utils.convertLSKToBeddows('1'),
+    timestamp: getTimestamp()
+});
+```
+
+First, let's create a folder which will store the new transaction types:
 
 ```bash
 mkdir transactions
 touch transactions/invoice_transaction.js
 ```
+
+Now, we create the InvoiceTransaction by extending the `BaseTransaction` interface:
 
 ```js
 //transactions/invoice_transaction.js
@@ -219,7 +245,7 @@ class InvoiceTransaction extends BaseTransaction {
 	static get TYPE () {
 		return 13;
 	}
-
+	
     /**
     * Set the `InvoiceTransaction` transaction FEE to 1 LSK.
     * Every time a user posts a transaction to the network, the transaction fee is paid to the delegate who includes the transaction into the block that the delegate forges.
@@ -227,7 +253,7 @@ class InvoiceTransaction extends BaseTransaction {
 	static get FEE () {
 		return `${10 ** 8}`;
 	}
-
+	
     /**
     * Prepares the necessary data for the `apply` and `undo` step.
     */
@@ -238,7 +264,7 @@ class InvoiceTransaction extends BaseTransaction {
 			},
 		]);
 	}
-
+	
     /**
     * Validation of the values of the transaction parameters, defined by the `InvoiceTransaction` transaction signer.
     */
@@ -279,31 +305,30 @@ class InvoiceTransaction extends BaseTransaction {
 		}
 		return errors;
 	}
-
+	
     /**
     * applyAsset() is where the custom logic of the InvoiceTransaction is implemented. 
-    * applyAsset() and undoAsset() use the information about the sender's account from the `store`.
     * Here we can store additional information about accounts using the `asset` field.
     * If it's the first invoice, the account is sending, two new properties `invoiceCount` and `invoicesSent` are added to the account assets.
     * If at least one other invoice has already been sent by this account, it would increment `invoiceCount` and add the Transaction ID of the InvoiceTransaction to the `invoicesSent` list.
     */
 	applyAsset(store) {
 		const sender = store.account.get(this.senderId);
-
+		
 		// Save invoice count and IDs
 		sender.asset.invoiceCount = sender.asset.invoiceCount === undefined ? 1 : sender.asset.invoiceCount++;
 		sender.asset.invoicesSent = sender.asset.invoicesSent === undefined ? [this.id] : [...sender.asset.invoicesSent, this.id];
 		store.account.set(sender.address, sender);
 		return [];
 	}
-
+	
     /**
     * Inverse of `applyAsset`.
     * Undoes the changes made in applyAsset() step.
     */
 	undoAsset(store) {
 		const sender = store.account.get(this.senderId);
-
+		
 		// Rollback invoice count and IDs
 		sender.asset.invoiceCount = sender.asset.invoiceCount === 1 ? undefined : sender.asset.invoiceCount--;
 		sender.asset.invoicesSent = sender.asset.invoicesSent.splice(
@@ -313,13 +338,38 @@ class InvoiceTransaction extends BaseTransaction {
 		store.account.set(sender.address, sender);
 		return [];
 	}
-
+	
 }
 
 module.exports = InvoiceTransaction;
 ```
 
 ## PaymentTransaction
+
+The InvoiceTransaction requires an `asset` field with the following properties. 
+
+> Note: The `requestedAmount` input is expressed in Beddows (1 LSK = 10^8 Beddows).
+
+```js
+const tx = new PaymentTransaction({ 
+    asset: {
+      "data": "InvoiceTransaction-ID" 
+    },
+    recipientId: '456L',
+    fee: transactions.utils.convertLSKToBeddows('0.1'),
+    timestamp: getTimestamp()
+});
+```
+
+Now, let's create a folder which will store the new transaction types:
+
+```bash
+mkdir transactions
+touch transactions/invoice_transaction.js
+```
+
+Now, let's the PaymentTransaction by extending the already existing trasnaction type `TransferTransaction` interface:
+
 
 ```bash
 touch transactions/payment_transaction.js
@@ -339,7 +389,7 @@ class PaymentTransaction extends TransferTransaction {
 	static get TYPE () {
 		return 14;
 	}
-
+	
     /**
     * Prepares the necessary data for the `apply` and `undo` step.
     */
@@ -350,14 +400,14 @@ class PaymentTransaction extends TransferTransaction {
 				id: this.asset.data,
 			},
 		]);
-	 }
-
+	}
+	
     /**
     * applyAsset() is where the custom logic of the PaymentTransaction is implemented. 
-    * 
     * The database is searched for the existance of an InvoiceTransaction with the ID that is set in the `asset.data` field of the PaymentTransaction.
     * If the transaction is found, the `requestedAmount` in the `asset` field is compared to the PaymentTransaction amount.
     * If the transaction amount is equal or higher than the `requestedAmount` in the corresponding InvoiceTransaction, the PaymentTransaction gets accepted.
+    * Note, that we are not verifying at this point, if the sender has already paid the invoice or not, to keep this example simple.
     */
 	applyAsset(store) {
 		super.applyAsset(store);
@@ -392,9 +442,9 @@ class PaymentTransaction extends TransferTransaction {
 		
 		return errors;
 	}
-
+	
     /**
-    * Inverse of `applyAsset`.
+    * Inverse of `applyAsset()`.
     * No rollback needed as there is only validation happening in applyAsset().
     * The implementation of sending the tokens back to the sender is already implemented in the TransferTransaction class.
     */
@@ -403,8 +453,48 @@ class PaymentTransaction extends TransferTransaction {
 	
 		return [];
 	}
-
+	
 }
 
 module.exports = PaymentTransaction;
 ```
+
+## 4. Register the new transaction types
+
+Right now, your project should have the following file structure:
+
+```
+invoice
+├── transactions
+  ├── invoice_transaction.js
+  └── payment_transaction.js
+├── index.js
+├── node_modules
+└── package.json
+```
+
+Add the new transaction types to your application, by registering them to the application instance:
+
+```js
+//index.js
+const { Application, genesisBlockDevnet, configDevnet} = require('lisk-sdk'); // require application class, the default genesis block and the default config for the application
+const InvoiceTransaction = require('./transaction/invoice_transaction'); // require the newly created transaction type 'InvoiceTransaction'
+const PayemntTransaction = require('./transaction/payment_transaction'); // require the newly created transaction type 'PayemntTransaction'
+
+configDevnet.app.label = 'invoice-blockchain-application'; // customize the application label
+
+const app = new Application(genesisBlockDevnet, configDevnet); // create the application instance
+
+app.registerTransaction(InvoiceTransaction); // register the 'InvoiceTransaction' 
+app.registerTransaction(PayemntTransaction); // register the 'PayemntTransaction' 
+
+// the code block below starts the application and doesn't need to be changed
+app
+    .run()
+    .then(() => app.logger.info('App started...'))
+    .catch(error => {
+        console.error('Faced error in application', error);
+        process.exit(1);
+    });
+```
+> *See the file on Github: [invoice/index.js](https://github.com/LiskHQ/lisk-sdk-examples/tree/development/invoice/index.js).*
