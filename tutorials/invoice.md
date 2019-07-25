@@ -343,6 +343,7 @@ class InvoiceTransaction extends BaseTransaction {
 
 module.exports = InvoiceTransaction;
 ```
+> *See the file on Github: [invoice/transactions/invoice_transaction.js](https://github.com/LiskHQ/lisk-sdk-examples/tree/development/invoice/transactions/invoice_transaction.js).*
 
 ## PaymentTransaction
 
@@ -458,6 +459,8 @@ class PaymentTransaction extends TransferTransaction {
 
 module.exports = PaymentTransaction;
 ```
+> *See the file on Github: [invoice/transactions/payment_transaction.js](https://github.com/LiskHQ/lisk-sdk-examples/tree/development/invoice/transactions/payment_transaction.js).*
+
 
 ## 4. Register the new transaction types
 
