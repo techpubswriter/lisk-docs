@@ -12,9 +12,8 @@ Additionally, we will build a simple web-interface for convenient usage of the a
 The Invoice App implementation goes as following:
 
 - __Steps 1-5__ describe the node-side implementation of the blockchain application.
-- __Step 6__  shows how to interact with the network from the (blockchain) client-side using a node script.
-- __Step 7__ showcases, how to build a user interface for the application.
-- __Step 8__ explains how to override specific config values.
+- __Step 6__ showcases, how to build a user interface to interact with the application.
+- __Step 7__ explains how to override specific config values.
 
 > Check out the __full code example__ of the [Invoice App on Github](https://github.com/LiskHQ/lisk-sdk-examples/tree/development/invoice).
 
@@ -50,8 +49,8 @@ As next step, we want to install the `lisk-sdk` package and add it to our projec
 
 ```bash
 npm init --yes # initialize the manifest file of the project
-npm install --save lisk-sdk@alpha # install lisk-sdk as dependency for the node server side
-npm install --save @liskhq/validator @liskhq/cryptography # install lisk-elements dependencies for the client side scripts
+npm install --save lisk-sdk # install lisk-sdk as dependency for the node server side
+npm install --save @liskhq/lisk-validator @liskhq/lisk-cryptography @liskhq/lisk-transactions @liskhq/lisk-constants # install lisk-elements dependencies for the client side scripts
 ```
 
 Make sure to start with a fresh database:
@@ -461,7 +460,6 @@ module.exports = PaymentTransaction;
 ```
 > *See the file on Github: [invoice/transactions/payment_transaction.js](https://github.com/LiskHQ/lisk-sdk-examples/tree/development/invoice/transactions/payment_transaction.js).*
 
-
 ## 4. Register the new transaction types
 
 Right now, your project should have the following file structure:
@@ -469,8 +467,8 @@ Right now, your project should have the following file structure:
 ```
 invoice
 ├── transactions
-  ├── invoice_transaction.js
-  └── payment_transaction.js
+| ├── invoice_transaction.js
+| └── payment_transaction.js
 ├── index.js
 ├── node_modules
 └── package.json
@@ -481,8 +479,8 @@ Add the new transaction types to your application, by registering them to the ap
 ```js
 //index.js
 const { Application, genesisBlockDevnet, configDevnet} = require('lisk-sdk'); // require application class, the default genesis block and the default config for the application
-const InvoiceTransaction = require('./transaction/invoice_transaction'); // require the newly created transaction type 'InvoiceTransaction'
-const PayemntTransaction = require('./transaction/payment_transaction'); // require the newly created transaction type 'PayemntTransaction'
+const InvoiceTransaction = require('./transactions/invoice_transaction'); // require the newly created transaction type 'InvoiceTransaction'
+const PayemntTransaction = require('./transactions/payment_transaction'); // require the newly created transaction type 'PayemntTransaction'
 
 configDevnet.app.label = 'invoice-blockchain-application'; // customize the application label
 
@@ -501,3 +499,64 @@ app
     });
 ```
 > *See the file on Github: [invoice/index.js](https://github.com/LiskHQ/lisk-sdk-examples/tree/development/invoice/index.js).*
+
+## 5. Start the network
+
+Now, let's start our customized blockchain network for the first time.
+
+The parameter `configDevnet`, which we pass to our `Application` instance in [step 3](#3-create-the-new-transaction-types), is preconfigured to start the node with a set of dummy delegates, that have enabled forging by default.
+These dummy delegates stabilize the new network and make it possible to test out the basic functionality of the network with only one node immediately.
+
+This creates a simple Devnet, which is beneficial during development of the blockchain application.
+The dummy delegates can be replaced by real delegates later on.
+
+To start the network, execute the following command:
+
+```bash
+node index.js | npx bunyan -o short
+```
+
+Check the logs, to verify the network has started successfully.
+
+If something went wrong, the process should stop and an error with debug information is displayed.
+
+## 6. Interact with the network
+
+Now that the network is started, we want to create a simple web interface for the Invoice application.
+
+As first step, create the transaction object.
+
+```bash
+mkdir client # create the folder for the client-side scripts
+cd client # navigate into the client folder
+touch print_sendable_hello-world.js # create the file that will hold the code to create the transaction object
+```
+
+```js
+//client/print_sendable_hello-world.js
+const HelloTransaction = require('../hello_transaction');
+const transactions = require('@liskhq/lisk-transactions');
+const { EPOCH_TIME } = require('@liskhq/lisk-constants');
+
+const getTimestamp = () => {
+	// check config file or curl localhost:4000/api/node/constants to verify your epoc time
+	const millisSinceEpoc = Date.now() - Date.parse(EPOCH_TIME); 
+	const inSeconds = ((millisSinceEpoc) / 1000).toFixed(0);
+	return  parseInt(inSeconds);
+}
+
+let tx =  new HelloTransaction({ // the desired transaction gets created and signed
+	asset: {
+		hello: 'world', // we save the string 'world' into the 'hello' asset
+	},
+	fee: `${transactions.utils.convertLSKToBeddows('1')}`, // we set the fee to 1 LSK
+	recipientId: '10881167371402274308L', // address of dummy delegate genesis_100
+	timestamp: getTimestamp(),
+});
+
+tx.sign('wagon stock borrow episode laundry kitten salute link globe zero feed marble');
+
+console.log(tx.stringify()); // the transaction is displayed as JSON object in the console
+process.exit(1); // stops the process after the transaction object has been printed
+```
+> *See the complete file on Github: [hello_world/client/print_sendable_hello-world.js](https://github.com/LiskHQ/lisk-sdk-examples/blob/development/hello_world/client/print_sendable_hello-world.js).*
