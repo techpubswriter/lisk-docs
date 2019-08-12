@@ -1,4 +1,5 @@
 == Lisk SDK Configuration
+:toc:
 
 === Pass and modify default values
 
