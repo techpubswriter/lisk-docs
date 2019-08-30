@@ -1,75 +1,106 @@
-# Hello World App
+== Hello World App
 
-Welcome to the step-by-step guide of creating the Hello World application with Lisk Alpha SDK.
-A simple App, showcasing a minimal setup of a blockchain application with 1 [custom transaction](../../lisk-sdk/customize.md) type: the "Hello" transaction.
+Welcome to the step-by-step guide of creating the Hello World
+application with Lisk Alpha SDK. A simple App, showcasing a minimal
+setup of a blockchain application with 1
+link:../../lisk-sdk/customize.md[custom transaction] type: the ``Hello''
+transaction.
 
-The purpose of Hello World application is to explain how to use and how to implement custom transactions with the Lisk SDK. 
-This custom transaction will extract the "hello" key value from the transaction asset property and save to the senders account.
+The purpose of Hello World application is to explain how to use and how
+to implement custom transactions with the Lisk SDK. This custom
+transaction will extract the ``hello'' key value from the transaction
+asset property and save to the senders account.
 
 The Hello World implementation goes as following:
 
-- __Steps 1-5__ describe what needs to be implemented on the node-side of the blockchain application.
-- __Step 6__ explains how to interact with the network from the client-side.
-- __Step 7__ explains how to override specific config values.
+* *Steps 1-5* describe what needs to be implemented on the node-side of
+the blockchain application.
+* *Step 6* explains how to interact with the network from the
+client-side.
+* *Step 7* explains how to override specific config values.
 
-> Check out the __full code example__ for the [Hello World App on Github](https://github.com/LiskHQ/lisk-sdk-examples/tree/development/hello_world).
+____
+Check out the *full code example* for the
+https://github.com/LiskHQ/lisk-sdk-examples/tree/development/hello_world[Hello
+World App on Github].
+____
 
-## 1. Set up the project
+=== 1. Set up the project
 
-First, let's create the root folder for the Hello World App and initialize the project:
+First, let’s create the root folder for the Hello World App and
+initialize the project:
 
-```bash
+[source,bash]
+----
 mkdir hello_world # create the root folder for the blockchain application
 cd hello_world # navigate into the root folder
 npm init --yes # initialize the manifest file of the project
-```
+----
 
-As next step, we want to install the `lisk-sdk` package and add it to our projects' dependencies.
+As next step, we want to install the `+lisk-sdk+` package and add it to
+our projects’ dependencies.
 
-> If you miss some of the dependencies, please go to [Lisk SDK - Pre-Install](../../lisk-sdk/setup.md#pre-installation) and follow the pre-installation steps for the SDK.
+____
+If you miss some of the dependencies, please go to
+link:../../lisk-sdk/setup.md#pre-installation[Lisk SDK - Pre-Install]
+and follow the pre-installation steps for the SDK.
+____
 
-### Supported Platforms
+==== Supported Platforms
 
-- Ubuntu 16.04 (LTS) x86_64
-- Ubuntu 18.04 (LTS) x86_64
-- MacOS 10.13 (High Sierra)
-- MacOS 10.14 (Mojave)
+* Ubuntu 16.04 (LTS) x86_64
+* Ubuntu 18.04 (LTS) x86_64
+* MacOS 10.13 (High Sierra)
+* MacOS 10.14 (Mojave)
 
-### Dependencies
+==== Dependencies
 
-| Dependencies     | Version |
-| ---------------- | ------- |
-| Node.js          | 10.15.3 |
-| PostgreSQL       | 10+     |
-| Redis (optional) | 5+      |
-| Python           | 2       |
+[cols=",",options="header",]
+|===
+|Dependencies |Version
+|Node.js |10.15.3
+|PostgreSQL |10+
+|Redis (optional) |5+
+|Python |2
+|===
 
-> Before installing the Lisk SDK, make sure to follow the instructions in the [Lisk SDK - Pre-Install](../../lisk-sdk/setup.md#pre-installation) section.
+____
+Before installing the Lisk SDK, make sure to follow the instructions in
+the link:../../lisk-sdk/setup.md#pre-installation[Lisk SDK -
+Pre-Install] section.
+____
 
-```bash
+[source,bash]
+----
 npm install --save lisk-sdk # install lisk-sdk as dependency for the node server side
 npm install --save @liskhq/lisk-validator @liskhq/lisk-cryptography @liskhq/lisk-transactions @liskhq/lisk-constants # install lisk-elements dependencies for the client side scripts
-```
+----
 
 Make sure to start with a fresh database:
-```sh-session
+
+[source,sh-session]
+----
 psql
 > DROP DATABASE lisk_dev;
 > CREATE DATABASE lisk_dev OWNER lisk;
 > \q
-```
+----
 
-Create the file `index.js`, which will hold the logic to initialize and start the blockchain application.
+Create the file `+index.js+`, which will hold the logic to initialize
+and start the blockchain application.
 
-```bash
+[source,bash]
+----
 touch index.js # create the index file
-```
+----
 
-## 2. Configure the application
+=== 2. Configure the application
 
-Next, let's configure the application, to provide basic information about the app we are going to build:
+Next, let’s configure the application, to provide basic information
+about the app we are going to build:
 
-```js
+[source,js]
+----
 //index.js
 const { Application, genesisBlockDevnet, configDevnet } = require('lisk-sdk'); // require application class, the default genesis block and the default config for the application
 
@@ -87,28 +118,49 @@ app
         console.error('Faced error in application', error);
         process.exit(1);
     });
-```
+----
 
-> *See the complete file on Github: [hello_world/index.js](https://github.com/LiskHQ/lisk-sdk-examples/tree/development/hello_world/index.js).*
+____
+_See the complete file on Github:
+https://github.com/LiskHQ/lisk-sdk-examples/tree/development/hello_world/index.js[hello_world/index.js]._
+____
 
-In the `line 2`, we require the needed dependencies from the `lisk-sdk` package.
-The most important one is the `Application` class, which is used in `line 6` to create the application instance.
-The application instance will start the whole application at the bottom of `index.js`.
+In the `+line 2+`, we require the needed dependencies from the
+`+lisk-sdk+` package. The most important one is the `+Application+`
+class, which is used in `+line 6+` to create the application instance.
+The application instance will start the whole application at the bottom
+of `+index.js+`.
 
-In `line 6` , the application instance gets initialized.
-By passing the parameters for the [genesis block](../../lisk-sdk/configuration.md#the-genesis-block) and the [configuration template](https://github.com/LiskHQ/lisk-sdk/blob/development/sdk/src/samples/config_devnet.json), the application is configured with most basic configurations to start the node.
+In `+line 6+` , the application instance gets initialized. By passing
+the parameters for the
+link:../../lisk-sdk/configuration.md#the-genesis-block[genesis block]
+and the
+https://github.com/LiskHQ/lisk-sdk/blob/development/sdk/src/samples/config_devnet.json[configuration
+template], the application is configured with most basic configurations
+to start the node.
 
-> If you want to change any of the values for `configDevnet`, check out the [full list of configurations](../../lisk-sdk/configuration.md#list-of-configuration-options) for Lisk SDK and overwrite them like described in [step 7](#7-customize-the-default-configuration)
+____
+If you want to change any of the values for `+configDevnet+`, check out
+the
+link:../../lisk-sdk/configuration.md#list-of-configuration-options[full
+list of configurations] for Lisk SDK and overwrite them like described
+in link:#7-customize-the-default-configuration[step 7]
+____
 
-At this point, you already can start the node and the network, to verify that the setup was successful:
+At this point, you already can start the node and the network, to verify
+that the setup was successful:
 
-```bash
+[source,bash]
+----
 node index.js | npx bunyan -o short
-```
-`node index.js` will start the node, and `| npx bunyan -o short` will pretty-print the logs in the console.
+----
+
+`+node index.js+` will start the node, and `+| npx bunyan -o short+`
+will pretty-print the logs in the console.
 
 If everything is ok, the following logs will be displayed:
-```
+
+....
 $ node index.js | npx bunyan -o short
 14:01:39.384Z  INFO lisk-framework: Booting the application with Lisk Framework(0.1.0)
 14:01:39.391Z  INFO lisk-framework: Starting the app - helloWorld-blockchain-app
@@ -193,25 +245,35 @@ $ node index.js | npx bunyan -o short
 14:01:40.624Z  INFO lisk-framework: Forging enabled on account: 14018336151296112016L
 14:01:40.627Z  INFO lisk-framework: Forging enabled on account: 2003981962043442425L
 [...]
-```
+....
 
-## 3. Create a new transaction type
+=== 3. Create a new transaction type
 
-For the Hello World App, we want to create a [custom transaction type](../../lisk-sdk/customize.md) `HelloTransaction`: 
-If an account has enough balance to process `HelloTransaction` transaction (fee is set to 1 LSK by default), the new "hello" property appears into this account's asset field.
-So after sending a valid `{"type": 10, "senderId": "16313739661670634666L", ... "asset": { "hello": "world" } }` transaction, the sender's account changes from e.g.: `{ address: "16313739661670634666L", ..., asset: null }`, to `{ "address": "16313739661670634666L", ..., "asset": {"hello": "world"}} }`.
+For the Hello World App, we want to create a
+link:../../lisk-sdk/customize.md[custom transaction type]
+`+HelloTransaction+`: If an account has enough balance to process
+`+HelloTransaction+` transaction (fee is set to 1 LSK by default), the
+new ``hello'' property appears into this account’s asset field. So after
+sending a valid
+`+{"type": 10, "senderId": "16313739661670634666L", ... "asset": { "hello": "world" } }+`
+transaction, the sender’s account changes from e.g.:
+`+{ address: "16313739661670634666L", ..., asset: null }+`, to
+`+{ "address": "16313739661670634666L", ..., "asset": {"hello": "world"}} }+`.
 
-Now, let's create a new file `hello_transaction.js`, which is defining the new transaction type `HelloTransaction`:
+Now, let’s create a new file `+hello_transaction.js+`, which is defining
+the new transaction type `+HelloTransaction+`:
 
-```bash
+[source,bash]
+----
 touch hello_transaction.js
-```
+----
 
-```js
+[source,js]
+----
 //hello_transaction.js
 const {
-	transactions: { BaseTransaction },
-	TransactionError,
+    transactions: { BaseTransaction },
+    TransactionError,
 } = require('lisk-sdk');
 
 class HelloTransaction extends BaseTransaction {
@@ -221,18 +283,18 @@ class HelloTransaction extends BaseTransaction {
     * Every time a transaction is received, it gets differentiated by the type.
     * The first 10 types, from 0-9 is reserved for the default Lisk Network functions. 
     */
-	static get TYPE () {
-		return 10;
-	}
-	
+    static get TYPE () {
+        return 10;
+    }
+    
     /**
     * Set the `HelloTransaction` transaction FEE to 1 LSK.
     * Every time a user posts a transaction to the network, the transaction fee is paid to the delegate who includes the transaction into the block that the delegate forges.
     */
-	static get FEE () {
+    static get FEE () {
         return `${10 ** 8}`;
     };
-	
+    
     /**
     * Prepares the necessary data for the `apply` and `undo` step.
     * The "hello" property will be added only to sender's account, therefore it's the only resource needed in the `applyAsset` and `undoAsset` steps. 
@@ -244,7 +306,7 @@ class HelloTransaction extends BaseTransaction {
             },
         ]);
     }
-    	
+        
     /**
     * Validation of the value of the "hello" property, defined by the `HelloTransaction` transaction signer.
     * The implementation below checks, that the value of the "hello" property needs to be a string, no longer than 64 characters. 
@@ -270,7 +332,7 @@ class HelloTransaction extends BaseTransaction {
     * applyAsset() and undoAsset() use the information about the sender's account from the `store`.
     * Here we can store additional information about accounts using the `asset` field. The content of property of "hello" transaction's asset gets saved into the "hello" property of the account's asset.
     */
-	applyAsset(store) {
+    applyAsset(store) {
         const errors = [];
         const sender = store.account.get(this.senderId);
         if (sender.asset && sender.asset.hello) {
@@ -287,41 +349,46 @@ class HelloTransaction extends BaseTransaction {
             store.account.set(sender.address, newObj);
         }
         return errors; // array of TransactionErrors, returns empty array if no errors are thrown
-	}
-	
+    }
+    
     /**
     * Inverse of `applyAsset`.
     * Undoes the changes made in applyAsset() step - reverts to the previous value of "hello" property, if not previously set this will be null.
     */
-	undoAsset(store) {
-		const sender = store.account.get(this.senderId);
-		const oldObj = { ...sender, asset: null };
-		store.account.set(sender.address, oldObj);
-		return [];
-	}
+    undoAsset(store) {
+        const sender = store.account.get(this.senderId);
+        const oldObj = { ...sender, asset: null };
+        store.account.set(sender.address, oldObj);
+        return [];
+    }
 
 }
 
 module.exports = HelloTransaction;
-``` 
+----
 
-> *See the file on Github: [hello_world/hello_transaction.js](https://github.com/LiskHQ/lisk-sdk-examples/blob/development/hello_world/hello_transaction.js)*
+____
+_See the file on Github:
+https://github.com/LiskHQ/lisk-sdk-examples/blob/development/hello_world/hello_transaction.js[hello_world/hello_transaction.js]_
+____
 
-## 4. Register the new transaction type
+=== 4. Register the new transaction type
 
 Right now, your project should have the following file structure:
 
-```
+....
 hello_world
 ├── hello_transaction.js
 ├── index.js
 ├── node_modules
 └── package.json
-```
+....
 
-Add the new transaction type to your application, by registering it to the application instance:
+Add the new transaction type to your application, by registering it to
+the application instance:
 
-```js
+[source,js]
+----
 //index.js
 const { Application, genesisBlockDevnet, configDevnet} = require('lisk-sdk'); // require application class, the default genesis block and the default config for the application
 const HelloTransaction = require('./hello_transaction'); // require the newly created transaction type 'HelloTransaction'
@@ -340,78 +407,100 @@ app
         console.error('Faced error in application', error);
         process.exit(1);
     });
-```
-> *See the file on Github: [hello_world/index.js](https://github.com/LiskHQ/lisk-sdk-examples/tree/development/hello_world/index.js).*
+----
 
-## 5. Start the network
+____
+_See the file on Github:
+https://github.com/LiskHQ/lisk-sdk-examples/tree/development/hello_world/index.js[hello_world/index.js]._
+____
 
-Now, let's start our customized blockchain network for the first time.
+=== 5. Start the network
 
-The parameter `configDevnet`, which we pass to our `Application` instance in [step 3](#3-create-a-new-transaction-type), is preconfigured to start the node with a set of dummy delegates, that have enabled forging by default.
-These dummy delegates stabilize the new network and make it possible to test out the basic functionality of the network with only one node immediately.
+Now, let’s start our customized blockchain network for the first time.
 
-This creates a simple Devnet, which is beneficial during development of the blockchain application.
-The dummy delegates can be replaced by real delegates later on.
+The parameter `+configDevnet+`, which we pass to our `+Application+`
+instance in link:#3-create-a-new-transaction-type[step 3], is
+preconfigured to start the node with a set of dummy delegates, that have
+enabled forging by default. These dummy delegates stabilize the new
+network and make it possible to test out the basic functionality of the
+network with only one node immediately.
+
+This creates a simple Devnet, which is beneficial during development of
+the blockchain application. The dummy delegates can be replaced by real
+delegates later on.
 
 To start the network, execute the following command:
 
-```bash
+[source,bash]
+----
 node index.js | npx bunyan -o short
-```
+----
 
 Check the logs, to verify the network has started successfully.
 
-If something went wrong, the process should stop and an error with debug information is displayed.
+If something went wrong, the process should stop and an error with debug
+information is displayed.
 
-## 6. Interact with the network
+=== 6. Interact with the network
 
-Now that the network is started, let's try to send a `HelloTransaction` to our node to see if it gets accepted.
+Now that the network is started, let’s try to send a
+`+HelloTransaction+` to our node to see if it gets accepted.
 
 As first step, create the transaction object.
 
-```bash
+[source,bash]
+----
 mkdir client # create the folder for the client-side scripts
 cd client # navigate into the client folder
 touch print_sendable_hello-world.js # create the file that will hold the code to create the transaction object
-```
+----
 
-```js
+[source,js]
+----
 //client/print_sendable_hello-world.js
 const HelloTransaction = require('../hello_transaction');
 const transactions = require('@liskhq/lisk-transactions');
 const { EPOCH_TIME } = require('@liskhq/lisk-constants');
 
 const getTimestamp = () => {
-	// check config file or curl localhost:4000/api/node/constants to verify your epoc time
-	const millisSinceEpoc = Date.now() - Date.parse(EPOCH_TIME); 
-	const inSeconds = ((millisSinceEpoc) / 1000).toFixed(0);
-	return  parseInt(inSeconds);
+    // check config file or curl localhost:4000/api/node/constants to verify your epoc time
+    const millisSinceEpoc = Date.now() - Date.parse(EPOCH_TIME); 
+    const inSeconds = ((millisSinceEpoc) / 1000).toFixed(0);
+    return  parseInt(inSeconds);
 }
 
 let tx =  new HelloTransaction({ // the desired transaction gets created and signed
-	asset: {
-		hello: 'world', // we save the string 'world' into the 'hello' asset
-	},
-	fee: `${transactions.utils.convertLSKToBeddows('1')}`, // we set the fee to 1 LSK
-	recipientId: '10881167371402274308L', // address of dummy delegate genesis_100
-	timestamp: getTimestamp(),
+    asset: {
+        hello: 'world', // we save the string 'world' into the 'hello' asset
+    },
+    fee: `${transactions.utils.convertLSKToBeddows('1')}`, // we set the fee to 1 LSK
+    recipientId: '10881167371402274308L', // address of dummy delegate genesis_100
+    timestamp: getTimestamp(),
 });
 
 tx.sign('wagon stock borrow episode laundry kitten salute link globe zero feed marble');
 
 console.log(tx.stringify()); // the transaction is displayed as JSON object in the console
 process.exit(0); // stops the process after the transaction object has been printed
-```
-> *See the complete file on Github: [hello_world/client/print_sendable_hello-world.js](https://github.com/LiskHQ/lisk-sdk-examples/blob/development/hello_world/client/print_sendable_hello-world.js).*
+----
 
-This script will print the transaction in the console, when executed (Python's json.tool is used to prettify the output):
+____
+_See the complete file on Github:
+https://github.com/LiskHQ/lisk-sdk-examples/blob/development/hello_world/client/print_sendable_hello-world.js[hello_world/client/print_sendable_hello-world.js]._
+____
 
-```bash
+This script will print the transaction in the console, when executed
+(Python’s json.tool is used to prettify the output):
+
+[source,bash]
+----
 node print_sendable_hello-world.js | python -m json.tool
-```
+----
 
 The generated transaction object should look like this:
-```json
+
+[source,json]
+----
 {  
    "id":"1199714748623931346",
    "amount":"0",
@@ -427,36 +516,52 @@ The generated transaction object should look like this:
       "hello":"world"
    }
 }
-```
+----
 
-Now that we have a sendable transaction object, let's send it to our node and see how it gets processed by analyzing the logs.
+Now that we have a sendable transaction object, let’s send it to our
+node and see how it gets processed by analyzing the logs.
 
-For this, we utilize the API of the node and post the created transaction object to the transaction endpoint of the API.
+For this, we utilize the API of the node and post the created
+transaction object to the transaction endpoint of the API.
 
-Because the API of every node is only accessible from localhost by default, you need to execute this query on the same server that your node is running on, unless you changed the config to [make your API accessible](#7-customize-the-default-configuration) to others or to the public.
+Because the API of every node is only accessible from localhost by
+default, you need to execute this query on the same server that your
+node is running on, unless you changed the config to
+link:#7-customize-the-default-configuration[make your API accessible] to
+others or to the public.
 
-> Make sure your node is running, before sending the transaction
+____
+Make sure your node is running, before sending the transaction
+____
 
-```bash
+[source,bash]
+----
 node print_sendable_hello-world.js | tee >(curl -X POST -H "Content-Type: application/json" -d @- localhost:4000/api/transactions) # posts the tx object to the node and displays it on the console
-```
+----
 
-If the node accepted the transaction, it should respond with: 
-```
+If the node accepted the transaction, it should respond with:
+
+....
 {"meta":{"status":true},"data":{"message":"Transaction(s) accepted"},"links":{}}
-```
+....
 
-To verify, that the transaction got included in the blockchain as well, query the database of your node, where the blockchain data is stored:
+To verify, that the transaction got included in the blockchain as well,
+query the database of your node, where the blockchain data is stored:
 
 Check, that the transaction got included into a block:
 
-> Use as `id` the id of your transaction object, that is posted to the node in the previous step
+____
+Use as `+id+` the id of your transaction object, that is posted to the
+node in the previous step
+____
 
-```bash
+[source,bash]
+----
 curl -X GET "http://localhost:4000/api/transactions?id=16130949532827670455" | python -m json.tool
-```
+----
 
-```json
+[source,json]
+----
 {
   "meta": {
     "offset": 0,
@@ -486,15 +591,17 @@ curl -X GET "http://localhost:4000/api/transactions?id=16130949532827670455" | p
   ],
   "links": {}
 }
-```
+----
 
-Check, that the `hello` property got included into the account:
+Check, that the `+hello+` property got included into the account:
 
-```bash
+[source,bash]
+----
 curl -X GET "http://localhost:4000/api/accounts?address=16313739661670634666L" | python -m json.tool
-```
+----
 
-```json
+[source,json]
+----
 {
   "meta": {
     "offset": 0,
@@ -513,23 +620,29 @@ curl -X GET "http://localhost:4000/api/accounts?address=16313739661670634666L" |
   ],
   "links": {}
 }
-```
+----
 
-For further interaction with the network, it is possible to run the process in the background by executing:
+For further interaction with the network, it is possible to run the
+process in the background by executing:
 
-```bash
+[source,bash]
+----
 pm2 start --name hello index.js # add the application to pm2 under the name 'hello'
 pm2 stop hello # stop the hello app
 pm2 start hello # start the hello app
-```
+----
 
-> PM2 needs to be installed on the system in order to run these commands. See [SDK Pre-Install section](../../lisk-sdk/setup.md#pre-installation).
+____
+PM2 needs to be installed on the system in order to run these commands.
+See link:../../lisk-sdk/setup.md#pre-installation[SDK Pre-Install
+section].
+____
 
-## 7. Customize the default configuration
+=== 7. Customize the default configuration
 
 Your project should have now the following file structure:
 
-```
+....
 hello_world
 ├── client
 │   └── print_sendable_hello-world.js
@@ -537,13 +650,19 @@ hello_world
 ├── index.js
 ├── node_modules
 └── package.json
-```
+....
 
-To run the script from remote, change the configuration before creating the `Application` instance, to make the API accessible:
+To run the script from remote, change the configuration before creating
+the `+Application+` instance, to make the API accessible:
 
-> For more configuration options, check out the [full list of configurations](../../lisk-sdk/configuration.md#list-of-configuration-options) for Lisk SDK
+____
+For more configuration options, check out the
+link:../../lisk-sdk/configuration.md#list-of-configuration-options[full
+list of configurations] for Lisk SDK
+____
 
-```js
+[source,js]
+----
 //index.js
 const { Application, genesisBlockDevnet, configDevnet} = require('lisk-sdk'); // require application class, the default genesis block and the default config for the application
 const HelloTransaction = require('./hello_transaction'); // require the newly created transaction type 'HelloTransaction'
@@ -564,16 +683,24 @@ app
         console.error('Faced error in application', error);
         process.exit(1);
     });
-```
+----
 
-> __Optional:__ After first successful verification, you may want to reduce the default console log level (info) and file log level (debug).<br> 
-> You can do so, by passing a copy of the config object `configDevnet` with customized config for the logger component:
+____
+*Optional:* After first successful verification, you may want to reduce
+the default console log level (info) and file log level (debug). You can
+do so, by passing a copy of the config object `+configDevnet+` with
+customized config for the logger component:
+____
 
-```js
+[source,js]
+----
 configDevnet.components.logger.fileLogLevel = "error"; // will only log errors and fatal errors in the log file
 configDevnet.components.logger.consoleLogLevel = "none"; // no logs will be shown in console
-```
+----
 
-As next step, you can design a nice frontend application like [Lisk Explorer](https://explorer.lisk.io/), which is showing users assets data inside of their account page. 
+As next step, you can design a nice frontend application like
+https://explorer.lisk.io/[Lisk Explorer], which is showing users assets
+data inside of their account page.
 
-See also section [Interact with the network](../interact-with-network.md).
+See also section link:../interact-with-network.md[Interact with the
+network].
