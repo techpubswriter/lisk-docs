@@ -54,32 +54,32 @@ Used for compiling dependencies.
 
 ===== Ubuntu
 
-[source,bash]
-----
-sudo apt install -y libtool automake autoconf curl python-minimal build-essential
-----
+
 
 ===== MacOS
 
 Ensure that both https://developer.apple.com/xcode/[XCode] and
 https://brew.sh/[Homebrew] are installed.
 
+
+
+[tabs]
+====
+Ubuntu::
++
+--
+[source,bash]
+----
+sudo apt install -y libtool automake autoconf curl python-minimal build-essential
+----
+--
+MacOS::
++
+--
 [source,bash]
 ----
 brew install autoconf automake libtool
 ----
-
-[tabs]
-====
-Tab A::
-+
---
-Contents of tab A.
---
-Tab B::
-+
---
-Contents of tab B.
 --
 ====
 
