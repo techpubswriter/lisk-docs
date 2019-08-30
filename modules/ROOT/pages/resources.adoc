@@ -1,0 +1,50 @@
+== Resources
+
+* https://github.com/LiskHQ[LiskHQ Github] - Source code for all
+software products of Lisk.
+* https://www.npmjs.com/~lisk[LiskHQ NPM packages] - Lists all NPM
+packages published by LiskHQ.
+* https://docs.google.com/spreadsheets/d/1EJ2ni5LBBNM43cCFkvQ7lYyAHeGm_cFwOQkfAqd-fQc/edit#gid=0[Community
+Tools] - List of community built tools, wallets and scripts to help make
+your life easier.
+* https://lisk.io/help-center[Help Center] - A searchable database of
+frequently asked questions.
+* https://lisk.io/academy[Lisk Academy] - A comprehensive and unbiased
+educational platform on blockchain technology.
+* https://github.com/LiskHQ/lips[Lisk Improvement Proposals] - A
+collection of proposed improvements to the Lisk protocol.
+* https://lisk.io/roadmap[Roadmap] - Explore Lisk’s development roadmap.
+* https://blog.lisk.io/[News] - Links to the latest news about Lisk,
+updated weekly.
+
+=== Community
+
+Join our community!
+
+Below are the essential links to the Lisk community channels.
+
+* https://mailchi.mp/lisk/newsletter[Subscribe to the Lisk newsletter] -
+Updates straight to your inbox
+* https://gitter.im/LiskHQ/lisk[Lisk Gitter] - Technical discussions for
+developers.
+* https://research.lisk.io/[Lisk Research] - Forum to propose and
+discuss technical improvements to the Lisk Protocol.
+* https://lisk.io/events[Lisk Events] - Information on upcoming events .
+* https://lisk.chat/[Lisk.chat]
+** https://lisk.chat/channel/announcements[Announcements]: Important
+updates from LiskHQ.
+** https://lisk.chat/channel/network[Network]: More technical updates
+and discussions about Lisk Mainnet and Testnet.
+** https://lisk.chat/channel/help-desk[Help Desk]: The perfect spot for
+beginners to get questions answered quickly by the community.
+** https://lisk.chat/channel/general[General]: General Lisk questions
+and discussions.
+** https://lisk.chat/channel/projects[Projects]: Collaborate, organize
+and grow your ideas in the projects room.
+* https://twitter.com/LiskHQ[Lisk Twitter]
+* https://www.reddit.com/r/Lisk/[Lisk Reddit]
+* https://www.youtube.com/channel/UCuqpGfg_bOQ8Ja4pj811PWg[Lisk
+Youtube]: Video content that outlines our vision, products, updates as
+well as educational content to learn about blockchain from the Lisk
+Academy
+* https://t.me/Lisk_HQ[Lisk Telegram]
