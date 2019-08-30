@@ -1,4 +1,4 @@
-    name: lisk-start
+name: lisk-start
 title: Lisk Getting Started
 version: '1.1.0'
 start_page: ROOT:start.adoc
