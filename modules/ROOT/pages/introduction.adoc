@@ -5,6 +5,14 @@ Mona Bärenfänger <mona@lisk.io>
 
 image:banner_sdk.png[SDK Logo]
 
+ifdef::env-github[]
+This content is Github only!
+endif::[]
+
+ifdef::env-site[]
+This content is Antora only.
+endif::[]
+
 == Mostly Harmless
 
 Please read this carefully. The current version of the SDK is the alpha
@@ -58,6 +66,8 @@ The Lisk SDK makes every effort to allow developers to focus simply and
 purely on writing the code that matters to their own blockchain
 application, and nothing more.
 
+video::hh-HvPJdYfc[youtube]
+
 == Package Directories
 
 [width="100%",cols="23%,77%",options="header",]
@@ -101,7 +111,7 @@ name is `+lisk_dev+`, so for the development purposes, a command
 password are `+lisk+` and `+password+`, they can be both changed in the
 link:configuration.md[configuration] of Lisk SDK.
 
-==== Installation
+=== Installation
 
 The installation of Lisk Alpha SDK is straightforward and limited to
 getting a single NPM package, `+lisk-sdk+`, to your Node.js project:
@@ -125,12 +135,10 @@ npm install @liskhq/lisk-transactions # install Lisk Elements Transactions Packa
 npm install @liskhq/lisk-cryptography # install Lisk Elements Cryptography Package
 ----
 
-____
-Check out the link:lisk-elements/packages.md[full list of Lisk Elements’
+NOTE: Check out the link:lisk-elements/packages.md[full list of Lisk Elements’
 packages]
-____
 
-==== Set up new a blockchain application
+=== Set up new a blockchain application
 
 To start, create the project structure of your blockchain application.
 Then install the link:setup.md[Lisk SDK dependencies] and the Lisk SDK
@@ -139,8 +147,9 @@ afterwards.
 [source,bash]
 ----
 npm init
-npm install --save lisk-sdk # make sure you installed the dependencies of lisk-sdk beforehand
+npm install --save lisk-sdk <1>
 ----
+<1> make sure you installed the dependencies of lisk-sdk beforehand
 
 To create a blockchain application, you need to provide an entry point
 of your application (like `+index.js+`) and set-up your network by using
@@ -152,17 +161,22 @@ copying the following three lines of code to your `+index.js+`:
 
 [source,js]
 ----
-const { Application, genesisBlockDevnet, configDevnet} = require('lisk-sdk'); // require the lisk-sdk package
+const { Application, genesisBlockDevnet, configDevnet} = require('lisk-sdk'); <1>
 
-const app = new Application(genesisBlockDevnet, configDevnet); // create a new application with default genesis block for a local devnet
+const app = new Application(genesisBlockDevnet, configDevnet); <2>
 
-app.run() // start the application
-   .then(() => app.logger.info('App started...')) // code that is executed after the successful start of the application.
-   .catch(error => { // code that is executed if the application start fails.
+app.run() <3>
+   .then(() => app.logger.info('App started...')) <4>
+   .catch(error => { <5>
         console.error('Faced error in application', error);
         process.exit(1);
 });
 ----
+<1> require the lisk-sdk package
+<2> create a new application with default genesis block for a local devnet
+<3> start the application
+<4> code that is executed after the successful start of the application.
+<5> code that is executed if the application start fails.
 
 Now, save and close `+index.js+` and try to start your newly created
 blockchain application by running:
@@ -172,10 +186,9 @@ blockchain application by running:
 node index.js | npx bunyan -o short # start the application
 ----
 
-____
-`+node index.js+` will start the node, and `+| npx bunyan -o short+`
+TIP: `+node index.js+` will start the node, and `+| npx bunyan -o short+`
 will pretty-print the logs in the console.
-____
+
 
 This should start the application with the predefined default
 configurations, which will connect your app to a local devnet. From this
@@ -258,7 +271,7 @@ compatible network.
 
 The diagram below provides a high-level overview of the architecture:
 
-image:../assets/diagram_sdk.png[Diagram]
+image:diagram_sdk.png[SDK Architecture]
 
 == Get Involved
 
