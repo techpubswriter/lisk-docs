@@ -36,6 +36,27 @@ note bottom of (Specifications/ References) : information-oriented
 :bob: ..> :alice:
 ----
 
+[ditaa]
+----
+                   +-------------+
+                   | Asciidoctor |-------+
+                   |   diagram   |       |
+                   +-------------+       | PNG out
+                       ^                 |
+                       | ditaa in        |
+                       |                 v
+ +--------+   +--------+----+    /---------------\
+ |        | --+ Asciidoctor +--> |               |
+ |  Text  |   +-------------+    |   Beautiful   |
+ |Document|   |   !magic!   |    |    Output     |
+ |     {d}|   |             |    |               |
+ +---+----+   +-------------+    \---------------/
+     :                                   ^
+     |          Lots of work             |
+     +-----------------------------------+
+----
+
+
 End of antora-only content
 endif::[]
 
