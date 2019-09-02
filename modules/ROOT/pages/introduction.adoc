@@ -1,8 +1,11 @@
-image:../assets/banner_sdk.png[Logo]
+= Lisk SDK
+Mona Bärenfänger <mona@lisk.io>
+:toc:
+:imagesdir: ../asstes/images
 
-== Lisk SDK
+image:banner_sdk.png[SDK Logo]
 
-=== Mostly Harmless
+== Mostly Harmless
 
 Please read this carefully. The current version of the SDK is the alpha
 release of the Lisk SDK. We have released the Lisk SDK in its current
@@ -37,7 +40,7 @@ We hope you enjoy building your proof-of-concept blockchain applications
 using the Lisk SDK and look forward to receiving your feedback and
 contributions during the alpha phase.
 
-=== What is the Lisk SDK?
+== What is the Lisk SDK?
 
 The Lisk SDK aims to provide an easy and reliable software development
 kit for building blockchain applications compatible with the
@@ -55,7 +58,7 @@ The Lisk SDK makes every effort to allow developers to focus simply and
 purely on writing the code that matters to their own blockchain
 application, and nothing more.
 
-=== Package Directories
+== Package Directories
 
 [width="100%",cols="23%,77%",options="header",]
 |===
@@ -73,9 +76,9 @@ which allows developers to manage a Lisk node instance and interact with
 a Lisk compatible network.
 |===
 
-=== Usage
+== Usage
 
-==== Dependencies
+=== Dependencies
 
 Before running Lisk SDK, the following dependencies need to be installed
 in order to run applications created with the Lisk SDK:
@@ -185,7 +188,7 @@ applications] and the link:../start/tutorials.md[example applications],
 which describe the process of creating a blockchain application
 step-by-step.
 
-==== Configure your blockchain parameters
+=== Configure your blockchain parameters
 
 You can also define your blockchain application parameters such as
 `+BLOCK_TIME+`, `+EPOCH_TIME+`, `+MAX_TRANSACTIONS_PER_BLOCK+` and more
@@ -210,7 +213,7 @@ const app = new Application(genesisBlockDevnet, {
 
 See the link:configuration.md[complete list of configuration options].
 
-==== Register a custom transaction
+=== Register a custom transaction
 
 You can link:customize.md[define your own transaction types] with
 Lisk-SDK. This is where the custom logic for your blockchain application
@@ -242,7 +245,7 @@ For information on creating your own custom transaction, see the
 link:customize.md[customize] page or link:../start/tutorials.md[follow
 the tutorials].
 
-==== Architecture Overview
+=== Architecture Overview
 
 The Lisk SDK operates on the NodeJS runtime and consists primarily of an
 application framework (link:lisk-framework/introduction.md[Lisk
@@ -257,7 +260,7 @@ The diagram below provides a high-level overview of the architecture:
 
 image:../assets/diagram_sdk.png[Diagram]
 
-=== Get Involved
+== Get Involved
 
 [cols=",",options="header",]
 |===
@@ -278,12 +281,12 @@ Bug Bounty Program]
 GitHub]
 |===
 
-=== Legal disclaimer:
+== Legal disclaimer:
 
 By using the Alpha release of the Lisk SDK, you acknowledge and agree
 that you have an adequate understanding of the risks associated with the
 use of the Alpha release of the Lisk SDK and that it is provided on an
-``as is'' and ``as available'' basis, without any representations or
+"as is" and "as available" basis, without any representations or
 warranties of any kind. To the fullest extent permitted by law, in no
 event shall the Lisk Foundation or other parties involved in the
 development of the Alpha release of the Lisk SDK have any liability
