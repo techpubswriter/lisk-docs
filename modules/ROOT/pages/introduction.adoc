@@ -1,7 +1,7 @@
 = Lisk SDK
 Mona Bärenfänger <mona@lisk.io>
 :toc:
-:imagesdir: ../asstes/images
+:imagesdir: ../assets/images
 
 image:banner_sdk.png[SDK Logo]
 
