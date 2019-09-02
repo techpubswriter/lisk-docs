@@ -6,7 +6,7 @@ Mona Bärenfänger <mona@lisk.io>
 image:banner_sdk.png[SDK Logo]
 
 ifdef::env-github[]
-This content is Github only! emoji:turtle[1000x]
+This content is Github only! 
 endif::[]
 
 ifdef::env-site[]
@@ -14,7 +14,7 @@ This content is Antora only.
 emoji:bear[1000x]
 
 You can contact {author} at {email}.
-{firstname} loves to hear from other chroniclers.
+{firstname} loves to hear from other chroniclers. emoji:turtle[100x]
 
 [plantuml]
 ----
