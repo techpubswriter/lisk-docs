@@ -6,11 +6,37 @@ Mona Bärenfänger <mona@lisk.io>
 image:banner_sdk.png[SDK Logo]
 
 ifdef::env-github[]
-This content is Github only!
+This content is Github only! emoji:turtle[1000x]
 endif::[]
 
 ifdef::env-site[]
 This content is Antora only.
+emoji:bear[1000x]
+
+You can contact {author} at {email}.
+{firstname} loves to hear from other chroniclers.
+
+[plantuml]
+----
+[product documentation] --> (Getting started) : contains
+[product documentation] --> (Cookbooks/ How-to Guides) : contains
+[product documentation] --> (Specifications/ References) : contains
+(Getting started) --> (Tutorials) : contains
+(Getting started) --> (Explanations) : contains
+
+note bottom of (Tutorials) : learning-oriented
+note bottom of (Explanations) : understanding-oriented
+note bottom of (Cookbooks/ How-to Guides) : problem-oriented
+note bottom of (Specifications/ References) : information-oriented
+----
+
+[plantuml]
+----
+:Alice: -> :Bob:
+:bob: ..> :alice:
+----
+
+End of antora-only content
 endif::[]
 
 == Mostly Harmless
