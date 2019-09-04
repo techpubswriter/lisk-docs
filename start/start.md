@@ -1,6 +1,6 @@
 # Lisk Documentation
 
-To onboard you efficiently, we’ve updated our documentation to reflect the most common actions that developers take on our site. Now you can easily find the information that is most relevant based on what you want to learn.
+To onboard you efficiently, we’ve updated our documentation to reflect the most common actions that developers take on our site. Now, you can easily find the information that is most relevant based on what you want to learn.
 
 [What is Lisk?](https://lisk.io/documentation/lisk-protocol) Our vision at Lisk is to empower individuals to create a more decentralized, efficient and transparent global economy. All of this isn't possible without your help.
 
@@ -17,7 +17,7 @@ Action                                                            | Description
 
 ## Developer Tools and User Interfaces
 
-For each tool we provide a general introduction, step-by-step guides and detailed specifications.
+For each tool, we provide a general introduction, step-by-step guides and detailed specifications.
 
 Tool                                                         | Description
 ------------------------------------------------------------ | --------------------------------------------------
