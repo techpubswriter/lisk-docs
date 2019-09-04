@@ -36,7 +36,7 @@ sudo adduser lisk
 
 ##### MacOS
 
-It is not essentially needed to set up a `lisk` user, especially when you are runnign a local instance for development pruposes.
+It is not essentially needed to set up a `lisk` user, especially when you are running, a local instance for development pruposes.
 If you still want to do it, we recommend to create the user using the macOS GUI: https://support.apple.com/en-gb/guide/mac-help/mtusr001/mac
 
 ### Toolchain components
@@ -59,7 +59,7 @@ brew install autoconf automake libtool
 
 ### PostgreSQL
 
-To install Postgres follow the intructions descibed below, depending on the operating system your machine is running on. 
+To install Postgres, follow the intructions descibed below, depending on the operating system your machine is running on. 
 
 Two different ways of installing Docker on your system are described below.
 If you run into issues when trying to set up PostgreSQL on your machine, try to install it inside of a docker container.
@@ -69,23 +69,23 @@ If you run into issues when trying to set up PostgreSQL on your machine, try to 
 #### Option A. Postgres with Docker
 
 Running Postgres inside a Docker container will setup the correct version of Postgres and containerize it away from any existing versions you may have locally on your machine.
-Choose this setup if you are not familiar with Postgres, or if you run in to issues with a previously installed version of Postgres.
+Choose this setup if you are not familiar with Postgres, or if you run into issues with a previously installed version of Postgres.
 
 ##### Install Docker
 To perform the command below successfully, install Docker first:
 
 __Supported Platforms:__
-Please refer to https://docs.docker.com/engine/installation/#desktop
+Please refer to https://docs.docker.com/engine/installation/#desktop.
 
 ##### Mac OS X
 
 Please refer to https://docs.docker.com/docker-for-mac/install/. 
 Please note that Docker for Mac already includes Docker Compose. 
-Install `make` using [XCode](https://developer.apple.com/xcode/features/) 
+Install `make` using [XCode](https://developer.apple.com/xcode/features/).
 
 ##### Linux
 
-Please refer to https://docs.docker.com/engine/installation/#server
+Please refer to https://docs.docker.com/engine/installation/#server.
 
 ##### Start the Docker container
 
@@ -96,7 +96,7 @@ docker run --name lisk_sdk_db -p 5432:5432 -e POSTGRES_USER=lisk -e POSTGRES_PAS
 ```
 
 This will install PostgreSQL version 10 (`postgres:10`) in a container with name `lisk_sdk_db` and binds the port `5432` of the container with the same port of the machine.
-As environment variables we expose `POSTGRES_USER=lisk` to create the lisk user and `POSTGRES_PASSWORD=password` to set the password for the lisk user.
+As environment variables, we expose `POSTGRES_USER=lisk` to create the lisk user and `POSTGRES_PASSWORD=password` to set the password for the lisk user.
 Finally the environment variable `POSTGRES_DB` creates the database `lisk_dev` with the `lisk` user as owner.
 
 The above should be enough to set up the database ready to use with Lisk Core.
@@ -120,7 +120,7 @@ An alternative way to install Postgres on the system without Docker.
 
 ##### Ubuntu
 
-Firstly, install postgreSQL on your machine:
+First, install postgreSQL on your machine:
 ```bash
 sudo apt-get purge -y postgres* # remove all already installed postgres versions
 sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt/ $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
@@ -141,7 +141,7 @@ sudo pg_dropcluster --stop 10 main
 sudo pg_createcluster --locale en_US.UTF-8 --start 10 main
 ```
 
-Create a new database user called `lisk` and grant it rights to create databases.
+Create a new database user called `lisk` and grant rights to create databases.
 Then create the database with the lisk user as owner.
 In the last step, define the password for the lisk user:
 ```bash
@@ -177,12 +177,12 @@ psql -d lisk_dev -c "alter user lisk with password 'password';"
 ```
 
 > Change `'password'` to a secure password of your choice.
-> Don't forget to update this password in the [Lisk SDK configuration](configuration.md) later on.
+> Don't forget to update this password later in the [Lisk SDK configuration](configuration.md) file.
 
 ### Node.js
 
 [Node.js](https://nodejs.org/) serves as the underlying engine for code execution.
-There are several different ways and version managers to install Node.JS on your system.
+There are several ways and version managers to install Node.JS on your system.
 We recommend one of the following two:
 
 #### Option A: Node Version Manager
